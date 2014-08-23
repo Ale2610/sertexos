@@ -1,0 +1,150 @@
+os.pullEvent = os.pullEventRaw
+
+ --Data
+ 
+ local version = "1.3"
+ 
+ --Function
+ 
+ function printRight( text )
+        w, h = term.getSize()
+        term.setCursorPos(w - #text, 1)
+        write(text)
+end
+
+function printTRight( text )
+        w, h = term.getSize()
+        term.setCursorPos(w - #text, 2)
+        write(text)
+end
+
+function printCenter( text )
+        local w, h = term.getSize()
+        term.setCursorPos((w - #text) / 2, 1)
+        write(text)
+end
+
+function printTCenter( text )
+        local w, h = term.getSize()
+        term.setCursorPos((w - #text) / 2, 2)
+        write(text)
+end
+
+function printTTCenter( text )
+        local w, h = term.getSize()
+        term.setCursorPos((w - #text) / 2, 5)
+        write(text)
+end
+
+function printC( text )
+        local x, y = term.getSize()
+        term.setCursorPos(( x - string.len(text)) / 2, y / 2)
+        write( text )
+end
+
+function clearT()
+	term.clear()
+	term.setTextColor(colors.red)
+	printTCenter("SertexOS")
+	printTRight("[ V " .. version .. " ]")
+	term.setCursorPos(1,2)
+	print(" ID: " .. os.getComputerID())
+	if os.getComputerLabel() then
+		print(" Name: " .. os.getComputerLabel())
+	end
+	printTTCenter("Options")
+	term.setTextColor(colors.yellow)
+end
+
+ function clear()
+	term.clear()
+	term.setCursorPos(1,1)
+	term.setTextColor(colors.red)
+	print("SertexOS" .. "  " .. "V " .. version)
+	term.setCursorPos(1,2)
+	print("ID: " .. os.getComputerID())
+
+	if os.getComputerLabel() then
+	term.setCursorPos(1,3)
+		print("Name: " .. os.getComputerLabel())
+	end
+end
+ 
+ --Interface
+ if not http then
+	print("You need HTTP API enabled!")
+else
+	clear()
+end
+
+term.setTextColor(colors.yellow)
+term.setCursorPos(2,7)
+print("[1] Set Computer's Name\n [2] Clear Computer's Name\n [3] Update\n [4] Reset Password\n [5] Exit")
+
+while true do
+  local id,key = os.pullEvent("key")
+	
+	if key == 29 then
+		print("CTRL Is Disabled!")
+		sleep(1)
+		shell.run(".sertexos/options")
+	end
+	
+	if key == 157 then
+		print("CTRL Is Disabled!")
+		sleep(1)
+		shell.run(".sertexos/options")
+	end
+ 
+    if key == 2 then  --1
+		sleep(0.1)
+		term.clear()
+		clear()
+		term.setCursorPos(2,6)
+		term.setTextColor(colors.green)
+		print("Set Computer's Name: ")
+		write(" ")
+		local label = read()
+		os.setComputerLabel(label)
+		sleep(1)
+		term.setTextColor(colors.lime)
+		print""
+		print(" Computer's Name: ")
+		print(" " .. os.getComputerLabel())
+		sleep(1)
+		shell.run(".sertexos/options")
+    end
+	
+	if key == 3 then --2
+		sleep(0.1)
+		term.clear()
+		clear()
+		term.setCursorPos(2,6)
+		term.setTextColor(colors.lime)
+		os.setComputerLabel()
+		print("Computer's Name Cleared!")
+		sleep(1)
+		shell.run(".sertexos/options")
+	end
+	
+	if key == 4 then  --3
+	  term.clear()
+      term.setCursorPos(2,2)
+      term.setTextColor(colors.red)
+      shell.run("pastebin", "run", "q0zqai3T") --update
+    end
+	
+	if key == 5 then --4
+		pass = http.get("https://dl.dropboxusercontent.com/u/135761538/computercraft/sertexos/pass")
+		
+		f = fs.open(".sertexos/pass", "w")
+		f.write(pass.readAll())
+		f.close()
+		sleep(0.3)
+		os.reboot()
+	end
+	
+	if key == 6 then --5
+		shell.run(".sertexos/home")
+	end
+end

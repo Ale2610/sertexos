@@ -1,0 +1,3 @@
+-- Startup Version: 1.0 --
+
+shell.run(".sertexos/boot")

@@ -131,7 +131,7 @@ while true do
 			f.write(pass.readAll())
 			f.close()
 			sleep(0.3)
-			os.reboot()
+			shell.run(".sertexos/pass")
 		end
 	end
 	

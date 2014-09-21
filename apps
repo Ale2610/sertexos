@@ -2,7 +2,7 @@ os.pullEvent = os.pullEventRaw
 
  --Data
  
- local version = "1.4"
+local version = fs.open(".sertexos/ver", "r")
  
  --Function
  
@@ -51,7 +51,7 @@ else
 term.clear()
 term.setTextColor(colors.red)
 printTCenter("SertexOS")
-printTRight("[ V: " .. version .. " ]")
+printTRight("[ V: " .. version.readLine() .. " ]")
 printTTCenter("Applications")
 term.setCursorPos(2,2)
 print("ID: " .. os.getComputerID())

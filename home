@@ -1,16 +1,8 @@
--- SertexOS
--- By _Ale2610_
--- Copyright (c) Ale2610
---
---This work is licensed under the Creative Commons Attribution-NonCommercial 4.0 International License. 
---To view a copy of this license, visit http://creativecommons.org/licenses/by-nc/4.0/.
---
-
 os.pullEvent = os.pullEventRaw
 
  --Data
  
- local version = "1.4.2"
+ local version = fs.open(".sertexos/ver", "r")
  
  --Function
  
@@ -48,7 +40,7 @@ function clear()
 term.clear()
 term.setTextColor(colors.red)
 printTCenter("SertexOS")
-printTRight("[ V: " .. version .. " ]")
+printTRight("[ V: " .. version.readLine() .. " ]")
 term.setCursorPos(2,2)
 print("ID: " .. os.getComputerID())
 if os.getComputerLabel() then
@@ -57,7 +49,7 @@ end
 term.setTextColor(colors.yellow)
  
 term.setCursorPos(2,5)
-print("[1] Applications\n [2] Options\n [3] Shell\n [4] Lock\n [5] Info/Help Shell\n [6] Reboot\n [7] Shutdown")
+print("[1] Applications\n [2] Options\n [3] Shell\n [4] Lock\n [5] Info/Help\n [6] Reboot\n [7] Shutdown")
 end
  
  --Interface
@@ -68,22 +60,21 @@ else
 
 verD = http.get("https://dl.dropboxusercontent.com/u/135761538/computercraft/sertexos/ver")
 
-verF = fs.open(".sertexos/ver","w")
+verF = fs.open(".sertexos/version","w")
 verF.write(verD.readAll())
 verF.close()
 
-local ver = fs.open(".sertexos/ver", "r")
+local ver = fs.open(".sertexos/version", "r")
 
-if version == ver.readLine() then
+--if version == ver.readLine() then
 	clear()
-else
-	term.clear()
-	term.setCursorPos(1,1)
-	textutils.slowPrint("New update Found!")
-	print("Press Any Key!")
-	os.pullEvent("key")
-	clear()
-end
+--else
+--	term.clear()
+--	term.setCursorPos(1,1)
+--	textutils.slowPrint("New update Found!")
+--	os.pullEvent("key")
+--	clear()
+--end
 
 
 while true do
@@ -119,21 +110,12 @@ while true do
 			sleep(0.1)
 			shell.run(".sertexos/boot")
 		else
-			clear()
-			print""
-			print("You need to set a password!")
+			shell.run(".sertexos/home")
 		end
 	end
 	
 	if key == 6 then -- 5
-		clear()
-		print""
-		term.setTextColor(colors.orange)
-		print("SertexOS V " .. version)
-		print("Created by _Ale2610_")
-		print""
-		print("Shell: ")
-		print("Call exit to exit from shell")
+		shell.run(".sertexos/info")
 	end
 	
     if key == 7 then  --6
@@ -154,8 +136,8 @@ while true do
        os.shutdown()
     end
 	
-	if key == 61 then  --F3
-	  	shell.run(".sertexos/.data/bios") --bios
-    end
+	--if key == 61 then  --F3
+	  	--shell.run(".sertexos/.data/bios") --bios
+    --end
 end
 end

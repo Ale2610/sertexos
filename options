@@ -1,8 +1,9 @@
 os.pullEvent = os.pullEventRaw
+os.loadAPI(".sertexos/sha256")
 
  --Data
  
- local version = "1.4"
+ local version = fs.open(".sertexos/ver", "r")
  
  --Function
  
@@ -43,10 +44,10 @@ function printC( text )
 end
 
 function clearT()
-	term.clear()
+term.clear()
 term.setTextColor(colors.red)
 printTCenter("SertexOS")
-printTRight("[ V: " .. version .. " ]")
+printTRight("[ V: " .. version.readLine() .. " ]")
 printTTCenter("Options")
 term.setCursorPos(2,2)
 print("ID: " .. os.getComputerID())
@@ -67,24 +68,11 @@ print("[1] Set Computer's Name\n [2] Clear Computer's Name\n [3] Update\n [4] Re
 
 while true do
   local id,key = os.pullEvent("key")
-	
-	if key == 29 then
-		print("CTRL Is Disabled!")
-		sleep(1)
-		shell.run(".sertexos/options")
-	end
-	
-	if key == 157 then
-		print("CTRL Is Disabled!")
-		sleep(1)
-		shell.run(".sertexos/options")
-	end
  
     if key == 2 then  --1
 		sleep(0.1)
 		term.clear()
-		clearT()
-		term.setCursorPos(2,6)
+		term.setCursorPos(2,2)
 		term.setTextColor(colors.green)
 		write("Set Computer's Name: ")
 		local label = read()
@@ -121,8 +109,9 @@ while true do
 			sleep(0.1)
 			write(" Insert password: ")
 			local oldPass = read("*")
+			local crypt = sha256.sha256(oldPass)
 			local f = fs.open(".sertexos/.data/pass", "r")
-			if oldPass == f.readLine() then
+			if crypt == f.readLine() then
 				textutils.slowPrint(" Loading...")
 				f.close()
 				pass = http.get("https://dl.dropboxusercontent.com/u/135761538/computercraft/sertexos/pass")
@@ -130,7 +119,7 @@ while true do
 				f.write(pass.readAll())
 				f.close()
 				sleep(0.3)
-				os.reboot()
+				shell.run(".sertexos/pass")
 			else
 				print(" Wrong Password!")
 				sleep(2)

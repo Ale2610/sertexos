@@ -1,8 +1,8 @@
 os.pullEvent = os.pullEventRaw
-
+os.loadAPI(".sertexos/sha256")
 --Data
 
- local version = "1.4"
+ local version = fs.open(".sertexos/ver", "r")
 
 --Function
 
@@ -58,8 +58,8 @@ term.setTextColor(colors.yellow)
 printC("Loading...")
 sleep(1.8)
 	
-if fs.exists(".sertexos/pass") then
-	shell.run(".sertexos/pass")
+if fs.exists(".sertexos/setup") then
+	shell.run(".sertexos/setup")
 else
 	if fs.exists(".sertexos/.data/pass") then
 		term.clear()
@@ -70,7 +70,8 @@ else
 		write("Insert Password: ")
 		local pass = read("*")
 		local f = fs.open(".sertexos/.data/pass", "r")
-		if pass == f.readLine() then
+		local crypt = sha256.sha256(pass)
+		if crypt == f.readLine() then
 			f.close()
 			shell.run(".sertexos/home")
 		else
@@ -78,5 +79,7 @@ else
 			sleep(2)
 			os.reboot()
 		end
+	else
+		shell.run(".sertexos/home")
 	end
 end

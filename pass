@@ -1,3 +1,7 @@
+os.pullEvent = os.pullEventRaw
+
+os.loadAPI(".sertexos/sha256")
+
 term.clear()
 term.setCursorPos(2,2)
 term.setTextColor(colors.red)
@@ -24,7 +28,8 @@ if key == 21 then
   
   if pass == confPass then
     local f =  fs.open(".sertexos/.data/pass", "w")
-    f.write(pass)
+    local crypt = sha256.sha256(confPass)
+    f.write(crypt)
     f.close()
     term.clear()
     term.setCursorPos(2,2)
@@ -44,9 +49,11 @@ end
 if key == 49 then
   if fs.exists(".sertexos/.data/pass") then
     fs.delete(".sertexos/.data/pass")
-	fs.delete(".sertexos/pass")
+    fs.delete(".sertexos/pass")
     shell.run(".sertexos/boot")
   else
+    fs.delete(".sertexos/.data/pass")
+    fs.delete(".sertexos/pass")
     shell.run(".sertexos/boot")
   end
 end

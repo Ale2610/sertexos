@@ -114,7 +114,7 @@ while true do
 			if crypt == f.readLine() then
 				textutils.slowPrint(" Loading...")
 				f.close()
-				pass = http.get("https://dl.dropboxusercontent.com/u/135761538/computercraft/sertexos/pass")
+				pass = http.get("https://raw.githubusercontent.com/Ale2610/sertexos/master/pass")
 				f = fs.open(".sertexos/pass", "w")
 				f.write(pass.readAll())
 				f.close()

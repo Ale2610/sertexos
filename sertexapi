@@ -25,7 +25,7 @@ function centerTitle( text )
         write(text)
 end
 
-function centerTitle( text )
+function centerTitle3( text )
         local w, h = term.getSize()
         term.setCursorPos((w - #text) / 2, 3)
         write(text)

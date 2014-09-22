@@ -7,6 +7,12 @@ function right( text )
         write(text)
 end
 
+function rightTitle( text )
+		w, h = term.getSize()
+        term.setCursorPos(w - #text, 2)
+        write(text)
+end
+
 function leftTitle( text )
         term.setCursorPos(1, 2)
         write(text)

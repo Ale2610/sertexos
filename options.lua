@@ -55,6 +55,11 @@ if os.getComputerLabel() then
 	print(" Name: " .. os.getComputerLabel())
 end
 end
+
+function clear()
+	term.clear()
+	term.setCursorPos(1,1)
+end
  
  --Interface
  if not http then
@@ -92,6 +97,7 @@ while true do
 		term.setCursorPos(2,6)
 		term.setTextColor(colors.lime)
 		os.setComputerLabel()
+		clear()
 		print("Computer's Name Cleared!")
 		sleep(1)
 		shell.run(".sertexos/options")

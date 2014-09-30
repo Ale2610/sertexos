@@ -22,7 +22,7 @@
         LICENSE:
        
         Ice-Browser - Graphical User Interface File-Browsing
-        Copyright © 2014 Cutecurtain
+        Copyright Â© 2014 Cutecurtain
  
                 This program is free software: you can redistribute it and/or modify
                 it under the terms of the GNU General Public License as published by
@@ -401,6 +401,7 @@ local function drawDesktop()
 		printCentred(1, "Thanks for using Ice-Browser! :D")
 		printHere(1, 2, string.rep("-", w), 32768, 1)
 		term.setCursorPos(1, 3)
+              print("Press Any Key")
 		os.pullEvent("key")
 		shell.run("exit")
 	end

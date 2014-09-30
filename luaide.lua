@@ -34,9 +34,9 @@ local curLanguage = {}
 local event_distract = "luaide_distractionEvent"
 
 -- Locations
-local updateURL = "https://raw.github.com/GravityScore/LuaIDE/master/luaide.lua"
+local updateURL = "https://raw.githubusercontent.com/Sertex-Team/sertexos/master/luaide.lua"
 local ideLocation = "/" .. shell.getRunningProgram()
-local themeLocation = "/.LuaIDE-Theme"
+local themeLocation = "/.sertexos/LuaIDE-Theme"
 
 local function isAdvanced() return term.isColor and term.isColor() end
 

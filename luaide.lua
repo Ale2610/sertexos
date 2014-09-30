@@ -2,7 +2,7 @@
 --  
 --  Lua IDE
 --  Made by GravityScore
---  SertexOS Classic Version
+--  SertexOS Version
 --  
 
 
@@ -2204,5 +2204,6 @@ term.clear()
 term.setCursorPos(1, 1)
 centerPrint("Thank You for Using Lua IDE " .. version)
 centerPrint("Made by GravityScore")
+print("Press Any Key")
 os.pullEvent("key")
 shell.run("exit")

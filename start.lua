@@ -5,5 +5,8 @@ if fs.exists(".sertexos") then
 else
 	term.clear()
 	term.setCursorPos(1,1)
-	shell.run("shell")
+	printError("Error on booting SertexOS!")
+       print("Press any key to install SertexOS")
+       os.pullEvent("key")
+       shell.run("pastebin", "run", "31AUQX7g")
 end

@@ -2,9 +2,20 @@ os.pullEvent = os.pullEventRaw
 
 os.loadAPI(".sertexos/sha256")
 
+function header()
+term.clear()
+term.setTextColor(colors.red)
+printTCenter("SertexOS")
+printTRight("[ SETUP ]")
+term.setCursorPos(2,2)
+print("ID: " .. os.getComputerID())
+--if os.getComputerLabel() then
+	--print(" Name: " .. os.getComputerLabel())
+--end
+end
+
 function setStartup()
-	term.clear()
-	term.setCursorPos(2,2)
+	header()
 	term.setTextColor(colors.red)
 	print("SertexOS Setup")
 	print""
@@ -26,7 +37,7 @@ function setStartup()
 			end
 			fs.delete(".sertexos/setup")
 			
-			print(" Press any key")
+			print("\n Press any key")
 			os.pullEvent("key")
 			shell.run(".sertexos/boot")
 		
@@ -43,7 +54,7 @@ function setStartup()
 			fs.delete(".sertexos/setup")
 			
 			print(" You can run SertexOS by typing sertexos")
-			print(" Press any key")
+			print("\n Press any key")
 			os.pullEvent("key")
 			shell.run(".sertexos/boot")
 		end
@@ -54,8 +65,9 @@ function setStartup()
 end
 
 function pass()
-	print""
-	print(" Do you want use password?")
+
+	header()
+	print("Do you want use password?")
 	print(" Y/N")
 
 	while true do
@@ -107,8 +119,5 @@ function pass()
 	end
 end
 
-term.clear()
-term.setCursorPos(2,2)
-term.setTextColor(colors.red)
-print("SertexOS Setup")
+header()
 pass()

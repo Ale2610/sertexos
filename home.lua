@@ -127,11 +127,11 @@ while true do
   local id,key = os.pullEvent("key")
 	
     if key == 2 then  --1
-		applications()
+	   shell.run(".sertexos/apps")
     end  
    
     if key == 3 then  --2
-	  options() --options
+	  shell.run(".sertexos/options") --options
     end
 	
 	if key == 4 then --3
@@ -143,7 +143,7 @@ while true do
 	end
 	
 	if key == 6 then -- 5
-		info()
+		shell.run(".sertexos/info")
 	end
 	
     if key == 7 then  --6

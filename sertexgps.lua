@@ -13,7 +13,10 @@ if not x then
 	print(" Reason: No modem or no GPS Tower!")
 	print""
 	term.setTextColor(colors.yellow)
-	print(" Press Enter!")
+	print(" Press Any Key!")
+	os.pullEvent("key")
+	term.clear()
+	shell.run("exit")
 else
 	term.setTextColor(colors.yellow)
 	textutils.slowPrint(" Position:")
@@ -24,7 +27,7 @@ else
 	textutils.slowPrint(" z: " .. z)
 	print""
 	term.setTextColor(colors.yellow)
-	print(" Press Enter!")
+	print(" Press Any Key!")
         os.pullEvent("key")
         term.clear()
 	shell.run("exit")

@@ -113,7 +113,7 @@ verF.close()
 local ver = fs.open(".sertexos/version", "r")
 
 --if version == ver.readLine() then
-	--clear()
+	clear()
 --else
 --	term.clear()
 --	term.setCursorPos(1,1)

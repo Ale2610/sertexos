@@ -67,6 +67,9 @@ end
 function pass()
 
 	header()
+       if not fs.exists(".sertexos/.data/pass") then
+         setStartup()
+       end
 	print("Do you want use password?")
 	print(" Y/N")
 

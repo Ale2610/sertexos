@@ -9,14 +9,12 @@ printTCenter("SertexOS")
 printTRight("[ SETUP ]")
 term.setCursorPos(2,2)
 print("ID: " .. os.getComputerID())
---if os.getComputerLabel() then
-	--print(" Name: " .. os.getComputerLabel())
---end
 end
 
 function setStartup()
 	header()
 	term.setTextColor(colors.red)
+	print""
 	print("SertexOS Setup")
 	print""
 	print(" Do you want to run SertexOS on startup?")
@@ -67,7 +65,7 @@ end
 function pass()
 
 	header()
-       if not fs.exists(".sertexos/.data/pass") then
+       if fs.exists(".sertexos/.data/pass") then
          setStartup()
        end
 	print("Do you want use password?")

@@ -1,4 +1,5 @@
 function header()
+os.loadAPI(".sertexos/sertexapi")
  local version = fs.open(".sertexos/ver", "r")
 term.clear()
 term.setTextColor(colors.red)

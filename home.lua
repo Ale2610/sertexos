@@ -52,36 +52,7 @@ term.setCursorPos(2,5)
 print("[1] Applications\n [2] Options\n [3] Shell\n [4] Lock\n [5] Info/Help\n [6] Reboot\n [7] Shutdown")
 end
 
---Main Function
-
-function lock()
-	if fs.exists(".sertexos/.data/pass") then
-			sleep(0.1)
-			shell.run(".sertexos/boot")
-		else
-			print("Set a password!")
-		end
-end
-
-function reboot()
-	term.clear()
-      term.setCursorPos(2,2)
-	  term.setTextColor(colors.yellow)
-      printC("Rebooting...")
-      sleep(0.5)
-      os.reboot()
-end
-
-function shutdown()
-	term.clear()
-    term.setCursorPos(2,2)
-	term.setTextColor(colors.yellow)
-    printC("Shutting Down...")
-	sleep(0.5)
-    os.shutdown()
-end
- 
- --Interface
+--Interface
  if not http then
 error("You need HTTP API enabled!")
 end
@@ -123,7 +94,12 @@ while true do
     end
 	
 	if key == 5 then --4
-		lock()
+		if fs.exists(".sertexos/.data/pass") then
+			sleep(0.1)
+			shell.run(".sertexos/boot")
+		else
+			print("Set a password!")
+		end
 	end
 	
 	if key == 6 then -- 5
@@ -131,10 +107,20 @@ while true do
 	end
 	
     if key == 7 then  --6
-	  reboot()
+	  term.clear()
+      term.setCursorPos(2,2)
+	  term.setTextColor(colors.yellow)
+      printC("Rebooting...")
+      sleep(0.5)
+      os.reboot()
     end
    
     if key == 8 then  --7
-	  	shutdown()
+	  	term.clear()
+    term.setCursorPos(2,2)
+	term.setTextColor(colors.yellow)
+    printC("Shutting Down...")
+	sleep(0.5)
+    os.shutdown()
     end
 end

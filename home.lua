@@ -54,19 +54,6 @@ end
 
 --Main Function
 
-function applications()
-	shell.run(".sertexos/apps")
-end
-
-function options()
-	shell.run("options")
-end
-
-function shell()
-	sleep(0.1)
-	shell.run("fg", "shell")
-end
-
 function lock()
 	if fs.exists(".sertexos/.data/pass") then
 			sleep(0.1)
@@ -74,10 +61,6 @@ function lock()
 		else
 			print("Set a password!")
 		end
-end
-
-function info()
-	shell.run(".sertexos/info")
 end
 
 function reboot()
@@ -135,7 +118,8 @@ while true do
     end
 	
 	if key == 4 then --3
-		shell()
+		sleep(0.1)
+		shell.run("fg", "shell")
     end
 	
 	if key == 5 then --4

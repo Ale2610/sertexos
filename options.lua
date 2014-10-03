@@ -98,8 +98,33 @@ function update()
     shell.run("pastebin", "run", "31AUQX7g")
 end
 
-function resetPass()
-	if fs.exists(".sertexos/.data/pass") then
+ --Interface
+ if not http then
+print("You need HTTP API enabled!")
+else
+
+clearT()
+term.setTextColor(colors.yellow)
+term.setCursorPos(2,7)
+print("[1] Set Computer's Name\n [2] Clear Computer's Name\n [3] Update\n [4] Reset Password\n [5] Back")
+
+while true do
+  local id,key = os.pullEvent("key")
+ 
+    if key == 2 then  --1
+		setLabel()
+    end
+	
+	if key == 3 then --2
+		clearLabel()
+	end
+	
+	if key == 4 then  --3
+	  update()
+    end
+	
+	if key == 5 then --4
+		if fs.exists(".sertexos/.data/pass") then
 			sleep(0.1)
 			write(" Insert password: ")
 			local oldPass = read("*")
@@ -127,34 +152,6 @@ function resetPass()
 			sleep(0.3)
 			shell.run(".sertexos/pass")
 		end
-end
- --Interface
- if not http then
-print("You need HTTP API enabled!")
-else
-
-clearT()
-term.setTextColor(colors.yellow)
-term.setCursorPos(2,7)
-print("[1] Set Computer's Name\n [2] Clear Computer's Name\n [3] Update\n [4] Reset Password\n [5] Back")
-
-while true do
-  local id,key = os.pullEvent("key")
- 
-    if key == 2 then  --1
-		setLabel()
-    end
-	
-	if key == 3 then --2
-		clearLabel()
-	end
-	
-	if key == 4 then  --3
-	  update()
-    end
-	
-	if key == 5 then --4
-		resetPass()
 	end
 	
 	if key == 6 then --5

@@ -86,7 +86,7 @@ function clearLabel()
 	os.setComputerLabel()
 	print("Computer's Name Cleared!")
 	sleep(1)
-	shell.run(".sertexos/options")
+	--shell.run(".sertexos/options")
 end
 
 function update()

@@ -62,6 +62,11 @@ function clear()
 end
 
 --Main Function
+
+function BackToOptions()
+	shell.run(".sertexos/options")
+end
+	
 function setLabel()
     sleep(0.1)
 	term.clear()
@@ -86,6 +91,7 @@ function clearLabel()
 	os.setComputerLabel()
 	print("Computer's Name Cleared!")
 	sleep(1)
+	BackToOptions()
 	--shell.run(".sertexos/options")
 end
 

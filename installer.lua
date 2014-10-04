@@ -1,6 +1,7 @@
 local Root = ".sertexos/"
 local DataRoot = ".sertexos/.data/"
 local APIRoot = ".sertexos/apis/"
+local GamesRoot = ".sertexos/games/"
 
 function clear()
         term.clear()
@@ -62,6 +63,7 @@ sleep(0.5)
 fs.makeDir(Root)
 fs.makeDir(DataRoot)
 fs.makeDir(APIRoot)
+fs.makeDir(GamesRoot)
 print("Downloading Files...")
 
 startup = http.get("https://raw.githubusercontent.com/Sertex-Team/sertexos/master/startup.lua")

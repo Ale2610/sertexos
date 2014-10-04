@@ -1,11 +1,9 @@
 os.pullEvent = os.pullEventRaw
 
- --Data
- 
- os.loadAPI(".sertexos/apis/sertexosapi")
+os.loadAPI(".sertexos/apis/sertexosapi")
 
  if not http then
-error("You need HTTP API enabled!")
+	error("You need HTTP API enabled!")
 end
 
 verD = http.get("https://dl.dropboxusercontent.com/u/135761538/computercraft/sertexos/ver")

@@ -70,7 +70,7 @@ print(" [2] File Browser\n [3] LuaIDE\n [4] SertexGPS\n [5] Back")
 while true do
   local id,key = os.pullEvent("key")
 	
-	if key )) 2 then --1
+	if key == 2 then --1
 	  shell.run(".sertexos/games")
 	end
 	

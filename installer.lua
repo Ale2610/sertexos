@@ -61,6 +61,7 @@ print("Loading...")
 sleep(0.5)
 fs.makeDir(Root)
 fs.makeDir(DataRoot)
+fs.makeDir(APIRoot)
 print("Downloading Files...")
 
 startup = http.get("https://raw.githubusercontent.com/Sertex-Team/sertexos/master/startup.lua")

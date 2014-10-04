@@ -62,7 +62,7 @@ fs.makeDir(Root)
 fs.makeDir(DataRoot)
 fs.makeDir(APIRoot)
 print("Downloading Files...")
-startup = http.get("https://raw.githubusercontent.com/Sertex-Team/sertexos/master/startup.lua")
+booter = http.get("https://raw.githubusercontent.com/Sertex-Team/sertexos/master/startup.lua")
 license = http.get("https://raw.githubusercontent.com/Sertex-Team/sertexos/master/LICENSE")
 home = http.get("https://raw.githubusercontent.com/Sertex-Team/sertexos/master/home.lua")
 boot = http.get("https://raw.githubusercontent.com/Sertex-Team/sertexos/master/boot.lua")
@@ -154,8 +154,11 @@ f.write(sertexapi.readAll())
 f.close()
 print("Downloaded .sertexos/apis/sertexapi")
 ---------------------------------N
+if fs.exists("startup") then
+	fs.move("startup", ".sertexos/startup")
+end
 s = fs.open("startup", "w")
-s.write(startup.readAll())
+s.write(booter.readAll())
 s.close()
 ---------------------------------N
 term.setTextColor(colors.lime)

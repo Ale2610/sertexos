@@ -9,15 +9,15 @@ while true do
   local id, key = os.pullEvent("key")
 
   if key == 2 then
-    shell.run("worm")
+    shell.run("fg /rom/programs/fun/worm")
   end
 
   if key == 3 then
-    shell.run("redirection")
+    shell.run("fg /rom/programs/fun/advanced/redirection")
   end
 
   if key == 4 then
-    shell.run("adventure")
+    shell.run("fg /rom/programs/fun/adventure")
   end
 
   if key == 5 then

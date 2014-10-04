@@ -13,7 +13,7 @@ end
 term.setTextColor(colors.yellow)
 end
 
-function headerSub( text )
+function headerSub( text ) --not home
 os.loadAPI(".sertexos/apis/sertexapi")
 local version = fs.open(".sertexos/ver", "r")
 term.clear()

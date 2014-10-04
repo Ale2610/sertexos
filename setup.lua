@@ -15,7 +15,7 @@ function setStartup()
 	header()
 	term.setTextColor(colors.red)
 	print""
-	print("SertexOS Setup")
+	print(" SertexOS Setup")
 	print""
 	print(" Do you want to run SertexOS on startup?")
 	print(" Y/N")
@@ -68,7 +68,10 @@ function pass()
        if fs.exists(".sertexos/.data/pass") then
          setStartup()
        end
-	print("Do you want use password?")
+	print""
+	print(" SertexOS Setup")
+	print""
+	print(" Do you want use password?")
 	print(" Y/N")
 
 	while true do

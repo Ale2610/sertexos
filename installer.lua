@@ -60,10 +60,20 @@ Reset()
 term.setTextColor(colors.yellow)
 print("Loading...")
 sleep(0.5)
-fs.makeDir(Root)
-fs.makeDir(DataRoot)
-fs.makeDir(APIRoot)
-fs.makeDir(GamesRoot)
+
+if not fs.exists(".sertexos") then
+	fs.makeDir(Root)
+end
+if not fs.exists(".sertexos/.data") then
+	fs.makeDir(DataRoot)
+end
+if not fs.exists(".sertexos/apis") then
+	fs.makeDir(APIRoot)
+end
+if not fs.exists(".sertexos/games") then
+	fs.makeDir(GamesRoot)
+end
+
 print("Downloading Files...")
 
 startup = http.get("https://raw.githubusercontent.com/Sertex-Team/sertexos/master/startup.lua")

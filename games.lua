@@ -1,7 +1,7 @@
 os.pullEvent = os.pullEventRaw
 os.loadAPI(".sertexos/apis/sertexosapi")
 
-headerSub("Games")
+sertexosapi.headerSub("Games")
 
 print("[1] Worm\n [2] Redirection\n [3] Adventure\n [4] Back")
 

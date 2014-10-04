@@ -20,7 +20,7 @@ term.clear()
 term.setTextColor(colors.red)
 sertexapi.center(2, "SertexOS")
 sertexapi.right(2, "[ V: " .. version.readLine() .. " ]")
-sertexapi.center(5, text )
+sertexapi.center(2, text )
 term.setCursorPos(2,2)
 print("ID: " .. os.getComputerID())
 if os.getComputerLabel() then

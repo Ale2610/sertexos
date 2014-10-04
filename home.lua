@@ -2,80 +2,31 @@ os.pullEvent = os.pullEventRaw
 
  --Data
  
- local version = fs.open(".sertexos/ver", "r")
- 
- --Function
- 
- function printRight( text )
-        w, h = term.getSize()
-        term.setCursorPos(w - #text, 1)
-        write(text)
-end
+ os.loadAPI(".sertexos/apis/sertexosapi")
 
-function printTRight( text )
-        w, h = term.getSize()
-        term.setCursorPos(w - #text, 2)
-        write(text)
-end
-
-function printCenter( text )
-        local w, h = term.getSize()
-        term.setCursorPos((w - #text) / 2, 1)
-        write(text)
-end
-
-function printTCenter( text )
-        local w, h = term.getSize()
-        term.setCursorPos((w - #text) / 2, 2)
-        write(text)
-end
-
-function printC( text )
-        local x, y = term.getSize()
-        term.setCursorPos(( x - string.len(text)) / 2, y / 2)
-        write( text )
-end
-
-function clear()
-term.clear()
-term.setTextColor(colors.red)
-printTCenter("SertexOS")
-printTRight("[ V: " .. version.readLine() .. " ]")
-term.setCursorPos(2,2)
-print("ID: " .. os.getComputerID())
-if os.getComputerLabel() then
-	print(" Name: " .. os.getComputerLabel())
-end
-term.setTextColor(colors.yellow)
- 
-term.setCursorPos(2,5)
-print("[1] Applications\n [2] Options\n [3] Shell\n [4] Lock\n [5] Info/Help\n [6] Reboot\n [7] Shutdown")
-end
-
---Interface
  if not http then
 error("You need HTTP API enabled!")
 end
 
-
 verD = http.get("https://dl.dropboxusercontent.com/u/135761538/computercraft/sertexos/ver")
 
-verF = fs.open(".sertexos/version","w")
-verF.write(verD.readAll())
-verF.close()
+verW = fs.open(".sertexos/version","w")
+verW.write(verD.readAll())
+verW.close()
 
-local ver = fs.open(".sertexos/version", "r")
+local verC = fs.open(".sertexos/version", "r")
 
---if version == ver.readLine() then
-	clear()
---else
---	term.clear()
---	term.setCursorPos(1,1)
---	textutils.slowPrint("New update Found!")
---	os.pullEvent("key")
---	clear()
---end
-
+if not version == verC.readLine() then
+	term.clear()
+	term.setCursorPos(1,1)
+	textutils.slowPrint("New update Found!")
+	print("Press Any Key")
+	os.pullEvent("key")
+end
+ 
+sertexosapi.header()
+print("[1] Applications\n [2] Options\n [3] Shell\n [4] Lock\n [5] Info/Help\n [6] Reboot\n [7] Shutdown")
+end
 
 while true do
   local id,key = os.pullEvent("key")

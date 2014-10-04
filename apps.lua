@@ -1,46 +1,7 @@
 os.pullEvent = os.pullEventRaw
 
  --Data
- 
-local version = fs.open(".sertexos/ver", "r")
- 
- --Function
- 
- function printRight( text )
-        w, h = term.getSize()
-        term.setCursorPos(w - #text, 1)
-        write(text)
-end
-
-function printTRight( text )
-        w, h = term.getSize()
-        term.setCursorPos(w - #text, 2)
-        write(text)
-end
-
-function printCenter( text )
-        local w, h = term.getSize()
-        term.setCursorPos((w - #text) / 2, 1)
-        write(text)
-end
-
-function printTCenter( text )
-        local w, h = term.getSize()
-        term.setCursorPos((w - #text) / 2, 2)
-        write(text)
-end
-
-function printTTCenter( text )
-        local w, h = term.getSize()
-        term.setCursorPos((w - #text) / 2, 5)
-        write(text)
-end
-
-function printC( text )
-        local x, y = term.getSize()
-        term.setCursorPos(( x - string.len(text)) / 2, y / 2)
-        write( text )
-end
+os.loadAPI(".sertexos/apis/sertexosapi")
 
 --Interface
 
@@ -48,18 +9,7 @@ if not http then
 print("You need HTTP API enabled!")
 else
  
-term.clear()
-term.setTextColor(colors.red)
-printTCenter("SertexOS")
-printTRight("[ V: " .. version.readLine() .. " ]")
-printTTCenter("Applications")
-term.setCursorPos(2,2)
-print("ID: " .. os.getComputerID())
-if os.getComputerLabel() then
-	print(" Name: " .. os.getComputerLabel())
-end
-
-term.setCursorPos(2,7)
+sertexosapi.headerSub("Applications")
 term.setTextColor(colors.lime)
 print("[1] Games")
 term.setTextColor(colors.yellow)

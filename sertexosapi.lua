@@ -10,6 +10,7 @@ print("ID: " .. os.getComputerID())
 if os.getComputerLabel() then
 	print(" Name: " .. os.getComputerLabel())
 end
+term.setCursorPos(2,5)
 term.setTextColor(colors.yellow)
 end
 

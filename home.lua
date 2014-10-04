@@ -26,7 +26,6 @@ end
  
 sertexosapi.header()
 print("[1] Applications\n [2] Options\n [3] Shell\n [4] Lock\n [5] Info/Help\n [6] Reboot\n [7] Shutdown")
-end
 
 while true do
   local id,key = os.pullEvent("key")

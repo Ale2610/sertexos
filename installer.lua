@@ -1,5 +1,6 @@
 local Root = ".sertexos/"
 local DataRoot = ".sertexos/.data/"
+local APIRoot = ".sertexos/apis"
 
 function clear()
         term.clear()
@@ -79,6 +80,8 @@ info = http.get("https://raw.githubusercontent.com/Sertex-Team/sertexos/master/i
 setup = http.get("https://raw.githubusercontent.com/Sertex-Team/sertexos/master/setup.lua")
 sha256 = http.get("https://raw.githubusercontent.com/Sertex-Team/sertexos/master/sha256")
 games = http.get("https://raw.githubusercontent.com/Sertex-Team/sertexos/master/games.lua")
+sertexosapi = http.get("https://raw.githubusercontent.com/Sertex-Team/sertexos/master/sertexosapi.lua")
+sertexapi = http.get("https://raw.githubusercontent.com/Sertex-Team/sertexos/master/sertexapi.lua")
 f = fs.open(Root .. "start", "w")
 f.write(start.readAll())
 f.close()
@@ -143,11 +146,19 @@ f = fs.open(Root .. "games", "w")
 f.write(games.readAll())
 f.close()
 print("Downloaded .sertexos/games (WIP)")
---N
+f = fs.open(APIRoot .. "sertexosapi", "w")
+f.write(sertexosapi.readAll())
+f.close()
+print("Downloaded .sertexos/apis/sertexosapi")
+f = fs.open(APIRoot .. "sertexapi", "w")
+f.write(sertexapi.readAll())
+f.close()
+print("Downloaded .sertexos/apis/sertexapi")
+---------------------------------N
 s = fs.open("startup", "w")
 s.write(startup.readAll())
 s.close()
---N
+---------------------------------N
 term.setTextColor(colors.lime)
 print("\nDone!")
 os.sleep(1)

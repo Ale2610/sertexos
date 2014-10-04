@@ -1,5 +1,5 @@
 function header()
-os.loadAPI(".sertexos/sertexapi")
+os.loadAPI(".sertexos/apis/sertexapi")
  local version = fs.open(".sertexos/ver", "r")
 term.clear()
 term.setTextColor(colors.red)
@@ -14,7 +14,7 @@ term.setTextColor(colors.yellow)
 end
 
 function headerSub( text )
-os.loadAPI(".sertexos/sertexapi")
+os.loadAPI(".sertexos/apis/sertexapi")
 term.clear()
 term.setTextColor(colors.red)
 sertexapi.centerTitle("SertexOS")

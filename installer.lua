@@ -61,18 +61,9 @@ term.setTextColor(colors.yellow)
 print("Loading...")
 sleep(0.5)
 
-if not fs.exists(".sertexos") then
-	fs.makeDir(Root)
-end
-if not fs.exists(".sertexos/.data") then
-	fs.makeDir(DataRoot)
-end
-if not fs.exists(".sertexos/apis") then
-	fs.makeDir(APIRoot)
-end
-if not fs.exists(".sertexos/games") then
-	fs.makeDir(GamesRoot)
-end
+fs.makeDir(Root)
+fs.makeDir(DataRoot)
+fs.makeDir(APIRoot)
 
 print("Downloading Files...")
 

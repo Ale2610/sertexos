@@ -1,6 +1,6 @@
 local Root = ".sertexos/"
 local DataRoot = ".sertexos/.data/"
-local APIRoot = ".sertexos/apis"
+local APIRoot = ".sertexos/apis/"
 
 function clear()
         term.clear()

@@ -2,7 +2,7 @@ os.pullEvent = os.pullEventRaw
 os.loadAPI(".sertexos/apis/sertexosapi")
 
 sertexosapi.loadWSHA()
-sertexos.start()
+sertexosapi.start()
 
 function pass()
 if fs.exists(".sertexos/.data/pass") then

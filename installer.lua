@@ -66,9 +66,12 @@ fs.makeDir(Root)
 fs.makeDir(DataRoot)
 fs.makeDir(APIRoot)
 print("Downloading Files...")
+----
 booter = http.get("https://raw.githubusercontent.com/Sertex-Team/sertexos/master/startup.lua")
+----
 license = http.get("https://raw.githubusercontent.com/Sertex-Team/sertexos/master/LICENSE")
 home = http.get("https://raw.githubusercontent.com/Sertex-Team/sertexos/master/home.lua")
+apps = http.get("https://raw.githubusercontent.com/Sertex-Team/sertexos/master/apps.lua")
 boot = http.get("https://raw.githubusercontent.com/Sertex-Team/sertexos/master/boot.lua")
 start = http.get("https://raw.githubusercontent.com/Sertex-Team/sertexos/master/start.lua")
 options = http.get("https://raw.githubusercontent.com/Sertex-Team/sertexos/master/options.lua")

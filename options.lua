@@ -9,13 +9,13 @@ function setLabel()
 	term.clear()
 	term.setCursorPos(2,2)
 	term.setTextColor(colors.green)
-	write("Set Computer's Name: ")
+	write("Set Computer Name: ")
 	local label = read()
 	os.setComputerLabel(label)
 	sleep(1)
 	term.setTextColor(colors.lime)
 	print""
-	print(" Computer's Name: " .. os.getComputerLabel())
+	print(" Computer Name: " .. os.getComputerLabel())
 	sleep(1)
 	shell.run(".sertexos/options")
 end
@@ -25,7 +25,7 @@ function clearLabel()
 	term.setTextColor(colors.lime)
 	os.setComputerLabel()
 	print""
-	print(" Computer's Name Cleared!")
+	print(" Computer Name Cleared!")
 end
 
 function update()
@@ -41,7 +41,7 @@ print("You need HTTP API enabled!")
 end
 
 sertexosapi.headerSub("Options")
-print("[1] Set Computer's Name\n [2] Clear Computer's Name\n [3] Update\n [4] Reset Password\n [5] Back")
+print("[1] Set Computer Name\n [2] Clear Computer Name\n [3] Update\n [4] Reset Password\n [5] Back")
 
 while true do
   local id,key = os.pullEvent("key")

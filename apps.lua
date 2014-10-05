@@ -15,7 +15,7 @@ sertexosapi.headerSub("Applications")
 term.setTextColor(colors.green)
 print("[1] Games")
 term.setTextColor(colors.blue)
-print(" [2] SertexGPS\n [3] Back")
+print(" [2] Ice-Browser\n [3] SertexGPS\n [4] Back")
 
 
 
@@ -27,10 +27,14 @@ while true do
 	end
 	
 	if key == 3 then
+		shell.run("fg", ".sertexos/iceBrowser")
+	end
+	
+	if key == 4 then
 		shell.run("fg", ".sertexos/sertexgps")
 	end
    
-    if key == 4 then
+    if key == 5 then
       shell.run(".sertexos/home")
     end
 	

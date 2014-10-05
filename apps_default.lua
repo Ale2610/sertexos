@@ -15,7 +15,7 @@ sertexosapi.headerSub("Applications")
 term.setTextColor(colors.green)
 print("[1] Games")
 term.setTextColor(colors.blue)
-print(" [2] File Browser\n [3] LuaIDE\n [4] SertexGPS\n [5] Back")
+print(" [2] Ice-Browser\n [3] LuaIDE\n [4] SertexGPS\n [5] Back")
 
 
 
@@ -27,7 +27,7 @@ while true do
 	end
 	
 	if key == 3 then  --2
-	  shell.run("fg", ".sertexos/fileBrowser")
+	  shell.run("fg", ".sertexos/iceBrowser")
     end
 	
 	if key == 4 then --3

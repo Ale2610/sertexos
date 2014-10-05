@@ -12,9 +12,9 @@ print("You need HTTP API enabled!")
 else
  
 sertexosapi.headerSub("Applications")
-term.setTextColor(colors.lime)
+term.setTextColor(colors.green)
 print("[1] Games")
-term.setTextColor(colors.yellow)
+term.setTextColor(colors.orange)
 print(" [2] File Browser\n [3] LuaIDE\n [4] SertexGPS\n [5] Back")
 
 

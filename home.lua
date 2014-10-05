@@ -32,8 +32,7 @@ while true do
   local id,key = os.pullEvent("key")
 	
     if key == 2 then  --1
-	   --shell.run(".sertexos/apps")
-	   print("Work In Progress")
+	   shell.run(".sertexos/apps")
     end  
    
     if key == 3 then  --2

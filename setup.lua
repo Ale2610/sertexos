@@ -8,7 +8,7 @@ function header()
 term.clear()
 term.setTextColor(colors.red)
 sertexapi.center(2, "SertexOS")
-sertexos.right(2, "[ SETUP ]")
+sertexapi.right(2, "[ SETUP ]")
 term.setCursorPos(2,2)
 print("ID: " .. os.getComputerID())
 end

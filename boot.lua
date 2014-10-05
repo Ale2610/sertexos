@@ -11,17 +11,19 @@ if fs.exists(".sertexos/.data/pass") then
 	term.setTextColor(colors.red)
 	print(" SertexOS")
 	print""
-	write(" Insert Password: ")
-	local pass = read("*")
-	local f = fs.open(".sertexos/.data/pass", "r")
-	local crypt = sha256.sha256(pass)
-	if crypt == f.readLine() then
-		f.close()
-		shell.run(".sertexos/home")
-	else
-		print(" Wrong Password!")
-		sleep(2)
-		pass()
+	while true do
+		write(" Insert Password: ")
+		local pass = read("*")
+		local f = fs.open(".sertexos/.data/pass", "r")
+		local crypt = sha256.sha256(pass)
+		if crypt == f.readLine() then
+			f.close()
+			shell.run(".sertexos/home")
+		else
+			print(" Wrong Password!")
+			sleep(2)
+			
+		end
 	end
 else
 	shell.run(".sertexos/home")

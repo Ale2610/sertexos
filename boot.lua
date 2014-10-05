@@ -40,7 +40,7 @@ print(" #  ")
 print(" ###")
 term.setCursorPos(2,2)
 sertexapi.center(2, "SertexOS")
-term.setTextColor(colors.yellow)
+term.setTextColor(colors.orange)
 sertexapi.centerDisplay("Loading...")
 sleep(1.8)
 

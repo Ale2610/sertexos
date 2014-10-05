@@ -25,7 +25,7 @@ if os.getComputerLabel() then
 	print(" Name: " .. os.getComputerLabel())
 end
 term.setCursorPos(2,5)
-term.setTextColor(colors.yellow)
+term.setTextColor(colors.orange)
 end
 
 function headerSub( text )
@@ -41,6 +41,6 @@ print("ID: " .. os.getComputerID())
 if os.getComputerLabel() then
 	print(" Name: " .. os.getComputerLabel())
 end
-term.setTextColor(colors.yellow)
+term.setTextColor(colors.orange)
 term.setCursorPos(2,7)
 end

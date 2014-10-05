@@ -22,7 +22,7 @@ if key == 21 then
   term.setTextColor(colors.red)
   print(" SertexOS Password Setup")
   print""
-  term.setTextColor(colors.yellow)
+  term.setTextColor(colors.orange)
   write(" Password: ")
   local pass = read("*")
   write(" Confirm Password: ")

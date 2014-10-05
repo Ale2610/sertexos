@@ -54,6 +54,10 @@ if not http then
 	shell.run("shell")
 end
 
+if fs.exists(".sertexos") then
+	fs.delete(".sertexos")
+end
+
 Reset()
 term.setTextColor(colors.yellow)
 print("Loading...")

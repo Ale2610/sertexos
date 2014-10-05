@@ -9,21 +9,21 @@ sertexosapi.start()
 	error("You need HTTP API enabled!")
 end
 
-verD = http.get("https://dl.dropboxusercontent.com/u/135761538/computercraft/sertexos/ver")
+--verD = http.get("https://dl.dropboxusercontent.com/u/135761538/computercraft/sertexos/ver")
 
-verW = fs.open(".sertexos/version","w")
-verW.write(verD.readAll())
-verW.close()
+--verW = fs.open(".sertexos/version","w")
+--verW.write(verD.readAll())
+--verW.close()
 
-local verC = fs.open(".sertexos/version", "r")
+--local verC = fs.open(".sertexos/version", "r")
 
-if not version == verC.readLine() then
-	term.clear()
-	term.setCursorPos(1,1)
-	textutils.slowPrint("New update Found!")
-	print("Press Any Key")
-	os.pullEvent("key")
-end
+--if not version == verC.readLine() then
+--	term.clear()
+--	term.setCursorPos(1,1)
+--	textutils.slowPrint("New update Found!")
+--	print("Press Any Key")
+--	os.pullEvent("key")
+--end
  
 sertexosapi.header()
 print("[1] Applications\n [2] Options\n [3] Shell\n [4] Lock\n [5] Info/Help\n [6] Reboot\n [7] Shutdown")
@@ -61,7 +61,7 @@ while true do
 	  term.clear()
       term.setCursorPos(2,2)
 	  term.setTextColor(colors.yellow)
-      printC("Rebooting...")
+      sertexapi.centerDisplay("Rebooting...")
       sleep(0.5)
       os.reboot()
     end
@@ -70,7 +70,7 @@ while true do
 	  	term.clear()
     term.setCursorPos(2,2)
 	term.setTextColor(colors.yellow)
-    printC("Shutting Down...")
+    sertexapi.centerDisplay("Shutting Down...")
 	sleep(0.5)
     os.shutdown()
     end

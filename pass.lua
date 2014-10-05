@@ -1,11 +1,13 @@
 os.pullEvent = os.pullEventRaw
 
-os.loadAPI(".sertexos/sha256")
+os.loadAPI(".sertexos/apis/sertexosapi")
+sertexosapi.loadWSHA()
+sertexosapi.start()
 
 term.clear()
 term.setCursorPos(2,2)
 term.setTextColor(colors.red)
-print("SertexOS Setup")
+print(" SertexOS Password Setup")
 print""
 print(" Do you want use password?")
 print(" Y/N")
@@ -18,7 +20,7 @@ if key == 21 then
   term.clear()
   term.setCursorPos(2,2)
   term.setTextColor(colors.red)
-  print("SertexOS Setup")
+  print(" SertexOS Password Setup")
   print""
   term.setTextColor(colors.yellow)
   write(" Password: ")

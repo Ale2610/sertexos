@@ -1,6 +1,8 @@
 os.pullEvent = os.pullEventRaw
 
-os.loadAPI(".sertexos/sha256")
+os.loadAPI(".sertexos/apis/sertexosapi")
+sertexosapi.loadWSHA()
+sertexosapi.start()
 
 function header()
 term.clear()

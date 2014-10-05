@@ -2,6 +2,9 @@ os.pullEvent = os.pullEventRaw
 
 os.loadAPI(".sertexos/apis/sertexosapi")
 
+sertexosapi.load()
+sertexosapi.start()
+
  if not http then
 	error("You need HTTP API enabled!")
 end

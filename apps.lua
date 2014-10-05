@@ -2,6 +2,8 @@ os.pullEvent = os.pullEventRaw
 
  --Data
 os.loadAPI(".sertexos/apis/sertexosapi")
+sertexosapi.load()
+sertexosapi.start()
 
 --Interface
 

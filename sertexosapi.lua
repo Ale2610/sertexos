@@ -1,3 +1,17 @@
+function load()
+	os.loadAPI(".sertexos/apis/sertexapi")
+end
+
+function loadWSHA()
+	os.loadAPI(".sertexos/apis/sertexapi")
+	os.loadAPI(".sertexos/apis/sha256")
+end
+
+function start()
+	term.setBackgroundColor(colors.white)
+	term.clear()
+end
+
 function header()
 os.loadAPI(".sertexos/apis/sertexapi")
  local version = fs.open(".sertexos/ver", "r")
@@ -14,7 +28,7 @@ term.setCursorPos(2,5)
 term.setTextColor(colors.yellow)
 end
 
-function headerSub( text ) --not home
+function headerSub( text )
 os.loadAPI(".sertexos/apis/sertexapi")
 local version = fs.open(".sertexos/ver", "r")
 term.clear()

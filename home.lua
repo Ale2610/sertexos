@@ -60,7 +60,7 @@ while true do
     if key == 7 then  --6
 	  term.clear()
       term.setCursorPos(2,2)
-	  term.setTextColor(colors.yellow)
+	  term.setTextColor(colors.blue)
       sertexapi.centerDisplay("Rebooting...")
       sleep(0.5)
       os.reboot()
@@ -69,7 +69,7 @@ while true do
     if key == 8 then  --7
 	  	term.clear()
     term.setCursorPos(2,2)
-	term.setTextColor(colors.yellow)
+	term.setTextColor(colors.blue)
     sertexapi.centerDisplay("Shutting Down...")
 	sleep(0.5)
     os.shutdown()

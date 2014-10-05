@@ -1,49 +1,9 @@
 os.pullEvent = os.pullEventRaw
 os.loadAPI(".sertexos/sha256")
---Data
-
- local version = fs.open(".sertexos/ver", "r")
-
---Function
-
-function textutils.slowprintC( text )
-		local w, h = term.getSize()
-		term.setCursorPos((w - #text) / 2, 2)
-		write( text )
-end
-
-function printRight( text )
-        w, h = term.getSize()
-        term.setCursorPos(w - #text, 1)
-        write(text)
-end
-
-function printTRight( text )
-        w, h = term.getSize()
-        term.setCursorPos(w - #text, 2)
-        write(text)
-end
-
-function printCenter( text )
-        local w, h = term.getSize()
-        term.setCursorPos((w - #text) / 2, 1)
-        write(text)
-end
-
-function printTCenter( text )
-        local w, h = term.getSize()
-        term.setCursorPos((w - #text) / 2, 2)
-        write( text )
-end
-
-function printC( text )
-        local x, y = term.getSize()
-        term.setCursorPos(( x - string.len(text)) / 2, y / 2)
-        write( text )
-end
+os.loadAPI(".sertexos/apis/sertexapi")
 
 if not http then
-  print("You need HTTP API enabled!")
+  error("You need HTTP API enabled!")
 end
 
 term.clear()
@@ -53,11 +13,12 @@ print("  # ")
 print(" #  ")
 print(" ###")
 term.setCursorPos(2,2)
-printTCenter("SertexOS")
+sertexapi.center(2, "SertexOS")
 term.setTextColor(colors.yellow)
-printC("Loading...")
+centerDisplay("Loading...")
 sleep(1.8)
-	
+
+while true do
 if fs.exists(".sertexos/setup") then
 	shell.run(".sertexos/setup")
 else
@@ -77,9 +38,9 @@ else
 		else
 			print("Wrong Password!")
 			sleep(2)
-			os.reboot()
 		end
 	else
 		shell.run(".sertexos/home")
 	end
+end
 end

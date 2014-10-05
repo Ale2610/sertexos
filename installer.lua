@@ -56,7 +56,11 @@ if not http then
 end
 
 if fs.exists(".sertexos") then
+	fs.move(".sertexos/.data/pass", "cache/pass")
 	fs.delete(".sertexos")
+	fs.makeDir(Root)
+	fs.makeDir(DataRoot)
+	fs.move("cache/pass", ".sertexos/.data/pass")
 end
 
 Reset()

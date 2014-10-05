@@ -15,7 +15,7 @@ print(" ###")
 term.setCursorPos(2,2)
 sertexapi.center(2, "SertexOS")
 term.setTextColor(colors.yellow)
-centerDisplay("Loading...")
+sertexapi.centerDisplay("Loading...")
 sleep(1.8)
 
 while true do
@@ -26,7 +26,7 @@ else
 		term.clear()
 		term.setCursorPos(2,2)
 		term.setTextColor(colors.red)
-		print("SertexOS")
+		print(" SertexOS")
 		print""
 		write(" Insert Password: ")
 		local pass = read("*")

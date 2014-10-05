@@ -28,7 +28,7 @@ else
 		term.setTextColor(colors.red)
 		print("SertexOS")
 		print""
-		write("Insert Password: ")
+		write(" Insert Password: ")
 		local pass = read("*")
 		local f = fs.open(".sertexos/.data/pass", "r")
 		local crypt = sha256.sha256(pass)
@@ -36,7 +36,7 @@ else
 			f.close()
 			shell.run(".sertexos/home")
 		else
-			print("Wrong Password!")
+			print(" Wrong Password!")
 			sleep(2)
 		end
 	else

@@ -14,7 +14,7 @@ else
 sertexosapi.headerSub("Applications")
 term.setTextColor(colors.green)
 print("[1] Games")
-term.setTextColor(colors.orange)
+term.setTextColor(colors.blue)
 print(" [2] File Browser\n [3] LuaIDE\n [4] SertexGPS\n [5] Back")
 
 

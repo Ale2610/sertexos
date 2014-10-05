@@ -1,10 +1,14 @@
 os.pullEvent = os.pullEventRaw
 
+os.loadAPI(".setexos/apis/sertexosapi")
+sertexosapi.load()
+sertexosapi.start()
+
 local ver = fs.open(".sertexos/ver", "r")
 
 term.clear()
 term.setCursorPos(1,1)
-term.setTextColor(colors.yellow)
+term.setTextColor(colors.blue)
 print""
 print(" SertexOS V: "..ver.readLine())
 print(" Created by Ale2610 (_Ale2610_ In-Game)")

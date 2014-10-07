@@ -25,8 +25,3 @@ function centerDisplay( text )
         term.setCursorPos(( x - string.len(text)) / 2, y / 2)
         write( text )
 end
-
-right(5, "example")
-left(3, "example")
-center(7, "example")
-centerDisplay("example")

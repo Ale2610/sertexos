@@ -8,10 +8,9 @@ function right(y, text )
 end
 
 function left(y, text)
-	h, w = term.getCursorPos()
-	term.setCursorPos(1, y)
+	w, h = term.getSize()
+	term.setCursorPos(y, w - #text)
 	write( text )
-	term.setCursorPos(h, w)
 end
 
 function center(y, text )

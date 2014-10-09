@@ -7,11 +7,11 @@ function right(y, text )
         write(text)
 end
 
-function left(y, text)
-	w, h = term.getSize()
-	term.setCursorPos(y, w - #text)
-	write( text )
-end
+--function left(y, text) --Do not use this function!
+	--w, h = term.getSize()
+	--term.setCursorPos(y, w - #text)
+	--write( text )
+--end
 
 function center(y, text )
         local w, h = term.getSize()

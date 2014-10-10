@@ -86,7 +86,7 @@ start = http.get("https://raw.githubusercontent.com/Sertex-Team/sertexos/master/
 options = http.get("https://raw.githubusercontent.com/Sertex-Team/sertexos/master/options.lua")
 iceBrowser = http.get("https://raw.githubusercontent.com/Sertex-Team/sertexos/master/iceBrowser.lua")
 sertexgps = http.get("https://raw.githubusercontent.com/Sertex-Team/sertexos/master/sertexgps.lua")
-luaide = htp.get("https://raw.githubusercontent.com/Sertex-Team/sertexos/master/luaide.lua")
+luaide = http.get("https://raw.githubusercontent.com/Sertex-Team/sertexos/master/luaide.lua")
 shell.run("pastebin", "get", "vVNbkkA1", ".sertexos/firewolf")
 --firewolf = http.get("https://dl.dropboxusercontent.com/u/135761538/computercraft/sertexos/firewolf.lua")
 pass = http.get("https://raw.githubusercontent.com/Sertex-Team/sertexos/master/pass.lua")

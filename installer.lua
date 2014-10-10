@@ -59,7 +59,7 @@ if fs.exists(".sertexos") and not fs.exists(".sertexos/.data/pas") then
 	fs.delete(".sertexos")
 	fs.makeDir(Root)
 	fs.makeDir(DataRoot)
-elseif fs.exists(".sertexos") and fs.exists(".sertexos/.data/pass")
+elseif fs.exists(".sertexos") and fs.exists(".sertexos/.data/pass") then
 	fs.move(".sertexos/.data/pass", "cache/pass")
 	fs.delete(".sertexos")
 	fs.makeDir(Root)

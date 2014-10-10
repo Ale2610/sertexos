@@ -55,7 +55,11 @@ if not http then
 	shell.run("shell")
 end
 
-if fs.exists(".sertexos") then
+if fs.exists(".sertexos") and not fs.exists(".sertexos/.data/pas") then
+	fs.delete(".sertexos")
+	fs.makeDir(Root)
+	fs.makeDir(DataRoot)
+elseif fs.exists(".sertexos") and fs.exists(".sertexos/.data/pass")
 	fs.move(".sertexos/.data/pass", "cache/pass")
 	fs.delete(".sertexos")
 	fs.makeDir(Root)

@@ -1,5 +1,5 @@
---SertexAPI by Ale2610
---1.0
+--SertexAPI by Ale2610 and MultMine
+--1.1
 
 function right(y, text )
         local w, h = term.getSize()

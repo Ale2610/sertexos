@@ -8,7 +8,7 @@ function setLabel()
     sleep(0.1)
 	term.clear()
 	term.setCursorPos(2,2)
-	term.setTextColor(colors.green)
+	term.setTextColor(text)
 	write("Set Computer Name: ")
 	local label = read()
 	os.setComputerLabel(label)
@@ -22,7 +22,7 @@ end
 
 function clearLabel()
 	sleep(0.1)
-	term.setTextColor(colors.lime)
+	term.setTextColor(text)
 	os.setComputerLabel()
 	print""
 	print(" Computer Name Cleared!")

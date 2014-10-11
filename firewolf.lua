@@ -7,6 +7,7 @@
 --  Original Concept From RednetExplorer 2.4.1
 --  RednetExplorer Made by ComputerCraftFan11
 --
+-- SertexOS Edition
 
 
 --  -------- Variables

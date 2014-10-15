@@ -45,10 +45,10 @@ if not term.isColor() then
   shell.run("shell")
 end
 
-if pocket then
-  print("This OS is for Advanced Computers!")
-  shell.run("shell")
-end
+--if pocket then
+  --print("This OS is for Advanced Computers!")
+  --shell.run("shell")
+--end
 
 if not http then
 	print("You need to enable HTTP")
@@ -87,7 +87,6 @@ options = http.get("https://raw.githubusercontent.com/Sertex-Team/sertexos/maste
 iceBrowser = http.get("https://raw.githubusercontent.com/Sertex-Team/sertexos/master/iceBrowser.lua")
 sertexgps = http.get("https://raw.githubusercontent.com/Sertex-Team/sertexos/master/sertexgps.lua")
 luaide = http.get("https://raw.githubusercontent.com/Sertex-Team/sertexos/master/luaide.lua")
---shell.run("pastebin", "get", "vVNbkkA1", ".sertexos/firewolf")
 firewolf = http.get("https://dl.dropboxusercontent.com/u/135761538/computercraft/sertexos/firewolf.lua")
 pass = http.get("https://raw.githubusercontent.com/Sertex-Team/sertexos/master/pass.lua")
 shell = http.get("https://raw.githubusercontent.com/Sertex-Team/sertexos/master/shell.lua")

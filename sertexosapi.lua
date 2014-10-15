@@ -43,7 +43,6 @@ function start()
 end
 
 function header()
-os.loadAPI(".sertexos/apis/sertexapi")
  local version = fs.open(".sertexos/ver", "r")
 term.clear()
 term.setTextColor( title )
@@ -59,7 +58,6 @@ term.setTextColor( app )
 end
 
 function headerSub( text )
-os.loadAPI(".sertexos/apis/sertexapi")
 local version = fs.open(".sertexos/ver", "r")
 term.clear()
 term.setTextColor(title)

@@ -8,13 +8,13 @@ sertexosapi.start()
 --Interface
 
 if not http then
-error("You need HTTP API enabled!")
+	error("You need HTTP API enabled!")
 end
  
 sertexosapi.headerSub("Applications")
-term.setTextColor( dir )
+term.setTextColor( colors.green )
 print("[1] Games")
-term.setTextColor( app )
+term.setTextColor( colors.blue )
 print(" [2] Ice-Browser\n [3] SertexGPS\n [4] LuaIDE\n [5] Firewolf\n [6] Back")
 
 

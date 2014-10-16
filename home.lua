@@ -23,5 +23,44 @@ while true do
   if key == 2 then
     shell.run(".sertexos/apps")
   end
+  
+  if key == 3 then
+    shell.run(".sertexos/options")
+  end
+
+  if key == 4 then
+    sleep(0.1)
+    shell.run("fg shell")
+  end
+
+  if key == 5 then
+    shell.run(".sertexos/info")
+  end
+
+  if key == 6 then
+    if fs.exists(".sertexos/.data/pass") then
+      shell.run(".sertexos/boot")
+    else
+      printError(" Set A Password")
+    end
+  end
+
+  if key == 7 then
+    term.clear()
+    term.setCursorPos(1,1)
+    sertexapi.centerDisplay("Rebooting...")
+    sleep(2)
+    os.reboot()
+  end
+  
+  if key == 8 then
+    term.clear()
+    term.setCursorPos(1,1)
+    sertexapi.centerDisplay("Shut Down...")
+    sleep(2)
+    os.shutdown()
+  end
+
+  sleep(0)
 
 end

@@ -1,7 +1,7 @@
 function load()
 	os.loadAPI(".sertexos/apis/sertexapi")
 	
-	local title, text, dir, app, bg
+	--local title, text, dir, app, bg
 	if term.isColor() then
 		title = colors.red
 		text = colors.green
@@ -21,7 +21,7 @@ function loadWSHA()
 	os.loadAPI(".sertexos/apis/sertexapi")
 	os.loadAPI(".sertexos/apis/sha256")
 	
-	local title, text, dir, app, bg
+	--local title, text, dir, app, bg
 	if term.isColor() then
 		title = colors.red
 		text = colors.green
@@ -43,7 +43,7 @@ function start()
 end
 
 function header()
- local version = fs.open(".sertexos/ver", "r")
+version = fs.open(".sertexos/ver", "r")
 term.clear()
 term.setTextColor( title )
 sertexapi.center(2, "SertexOS")
@@ -53,12 +53,12 @@ print("ID: " .. os.getComputerID())
 if os.getComputerLabel() then
 	print(" Name: " .. os.getComputerLabel())
 end
-term.setCursorPos(2,5)
+term.setCursorPos(1,5)
 term.setTextColor( app )
 end
 
 function headerSub( text )
-local version = fs.open(".sertexos/ver", "r")
+version = fs.open(".sertexos/ver", "r")
 term.clear()
 term.setTextColor(title)
 sertexapi.center(2, "SertexOS")
@@ -70,5 +70,5 @@ if os.getComputerLabel() then
 	print(" Name: " .. os.getComputerLabel())
 end
 term.setTextColor(app)
-term.setCursorPos(2,7)
+term.setCursorPos(1,7)
 end

@@ -18,7 +18,7 @@ term.setTextColor(colors.blue)
 print(" [2] Ice-Browser\n [3] SertexGPS\n [4] LuaIDE\n [5] Firewolf\n [6] Back")
 
 while true do
-  local id,key = os.pullEvent("key")
+       id, key = os.pullEvent("key")
 	
 	if key == 2 then
 	  shell.run(".sertexos/games")

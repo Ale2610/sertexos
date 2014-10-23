@@ -3,7 +3,7 @@ os.loadAPI(".sertexos/apis/sertexosapi")
 
 sertexosapi.headerSub("Games")
 
-print("[1] Worm\n [2] Redirection\n [3] Adventure\n [4] Back")
+print(" [1] Worm\n [2] Redirection\n [3] Adventure\n [4] Back")
 
 while true do
   local id, key = os.pullEvent("key")

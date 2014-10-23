@@ -1,27 +1,13 @@
 function load()
 	os.loadAPI(".sertexos/apis/sertexapi")
-	
-	--local title, text, dir, app, bg
-	if term.isColor() then
-		title = colors.red
-		text = colors.green
-		dir = colors.green
-		app = colors.blue
-		bg = colors.white
-	else
-		title = colors.white
-		text = colors.white
-		dir = colors.white
-		app = colors.white
-		bg = colors.black
-	end
 end
 
 function loadWSHA()
 	os.loadAPI(".sertexos/apis/sertexapi")
 	os.loadAPI(".sertexos/apis/sha256")
-	
-	--local title, text, dir, app, bg
+end
+
+function start()
 	if term.isColor() then
 		title = colors.red
 		text = colors.green
@@ -35,10 +21,7 @@ function loadWSHA()
 		app = colors.white
 		bg = colors.black
 	end
-end
-
-function start()
-	term.setBackgroundColor(colors.white)
+	term.setBackgroundColor( bg )
 	term.clear()
 end
 

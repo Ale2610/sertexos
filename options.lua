@@ -41,7 +41,7 @@ print("You need HTTP API enabled!")
 end
 
 sertexosapi.headerSub("Options")
-print("[1] Set Computer Name\n [2] Clear Computer Name\n [3] Update\n [4] Reset Password\n [5] Back")
+print(" [1] Set Computer Name\n [2] Clear Computer Name\n [3] Update\n [4] Reset Password\n [5] Back")
 
 while true do
   local id,key = os.pullEvent("key")

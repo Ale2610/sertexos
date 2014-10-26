@@ -14,12 +14,14 @@ function start()
 		dir = colors.green
 		app = colors.blue
 		bg = colors.white
+              logo = colors.red
 	else
 		title = colors.white
 		text = colors.white
 		dir = colors.white
 		app = colors.white
 		bg = colors.black
+              logo = colors.white
 	end
 	term.setBackgroundColor( bg )
 	term.clear()

@@ -8,7 +8,7 @@ function pass()
 if fs.exists(".sertexos/.data/pass") then
 	term.clear()
 	term.setCursorPos(2,2)
-	term.setTextColor(colors.red)
+	term.setTextColor( title )
 	print(" SertexOS")
 	print""
 	while true do
@@ -36,13 +36,13 @@ end
 
 term.clear()
 term.setCursorPos(2,2)
-term.setTextColor(colors.red)
+term.setTextColor( logo )
 print("  # ")
 print(" #  ")
 print(" ###")
 term.setCursorPos(2,2)
 sertexapi.center(2, "SertexOS")
-term.setTextColor(colors.blue)
+term.setTextColor( text )
 sertexapi.centerDisplay("Loading...")
 sleep(1.8)
 

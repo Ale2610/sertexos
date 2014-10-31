@@ -1,8 +1,8 @@
 os.pullEvent = os.pullEventRaw
 
-os.loadAPI(".sertexos/apis/sertexosapi")
-sertexosapi.loadWSHA()
-sertexosapi.start()
+os.loadAPI(".sertexos/apis/sertexos")
+sertexos.loadWSHA()
+sertexos.start()
 
 term.clear()
 term.setCursorPos(2,2)

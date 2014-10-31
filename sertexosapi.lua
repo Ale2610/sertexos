@@ -1,10 +1,12 @@
 function load()
-	os.loadAPI(".sertexos/apis/sertexapi")
+	os.loadAPI("/.sertexos/apis/sertextext")
+       sertexos = true
 end
 
-function loadWSHA()
-	os.loadAPI(".sertexos/apis/sertexapi")
-	os.loadAPI(".sertexos/apis/sha256")
+function loadWithSHA()
+	os.loadAPI("/.sertexos/apis/sertextext")
+	os.loadAPI("/.sertexos/apis/sha256")
+       sertexos = true
 end
 
 function start()
@@ -31,8 +33,8 @@ function header()
 version = fs.open(".sertexos/ver", "r")
 term.clear()
 term.setTextColor( title )
-sertexapi.center(2, "SertexOS")
-sertexapi.right(2, "[ V: " .. version.readLine() .. " ]")
+sertextext.center(2, "SertexOS")
+sertextext.right(2, "[ V: " .. version.readLine() .. " ]")
 term.setCursorPos(2,2)
 print("ID: " .. os.getComputerID())
 if os.getComputerLabel() then
@@ -46,9 +48,9 @@ function headerSub( text )
 version = fs.open(".sertexos/ver", "r")
 term.clear()
 term.setTextColor(title)
-sertexapi.center(2, "SertexOS")
-sertexapi.right(2, "[ V: " .. version.readLine() .. " ]")
-sertexapi.center(5, text )
+sertextext.center(2, "SertexOS")
+sertextext.right(2, "[ V: " .. version.readLine() .. " ]")
+sertextext.center(5, text )
 term.setCursorPos(2,2)
 print("ID: " .. os.getComputerID())
 if os.getComputerLabel() then
@@ -56,4 +58,15 @@ if os.getComputerLabel() then
 end
 term.setTextColor(app)
 term.setCursorPos(1,7)
+end
+
+functon unload()
+  os.unloadAPI("/.sertexos/apis/sertextext")
+  sertexos = false
+end
+
+function unloadWithSHA()
+  os.unloadAPI("/.sertexos/apis/sertextext")
+  os.unloadAPI("/.sertexos/apis/sha256")
+  sertexos = false
 end

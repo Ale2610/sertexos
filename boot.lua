@@ -1,8 +1,8 @@
 os.pullEvent = os.pullEventRaw
-os.loadAPI(".sertexos/apis/sertexosapi")
+os.loadAPI(".sertexos/apis/sertexos")
 
-sertexosapi.loadWSHA()
-sertexosapi.start()
+sertexos.loadWithSHA()
+sertexos.start()
 
 function pass()
 if fs.exists(".sertexos/.data/pass") then
@@ -41,9 +41,9 @@ print("  # ")
 print(" #  ")
 print(" ###")
 term.setCursorPos(2,2)
-sertexapi.center(2, "SertexOS")
+sertextext.center(2, "SertexOS")
 term.setTextColor( text )
-sertexapi.centerDisplay("Loading...")
+sertextext.centerDisplay("Loading...")
 sleep(1.8)
 
 

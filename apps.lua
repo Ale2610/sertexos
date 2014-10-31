@@ -1,9 +1,9 @@
 os.pullEvent = os.pullEventRaw
 
  --Data
-os.loadAPI(".sertexos/apis/sertexosapi")
-sertexosapi.load()
-sertexosapi.start()
+os.loadAPI(".sertexos/apis/sertexos")
+sertexos.load()
+sertexos.start()
 
 --Interface
 
@@ -11,7 +11,7 @@ if not http then
 	error("You need HTTP API enabled!")
 end
  
-sertexosapi.headerSub("Applications")
+sertexos.headerSub("Applications")
 term.setTextColor(colors.green)
 print(" [1] Games")
 term.setTextColor(colors.blue)

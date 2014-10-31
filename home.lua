@@ -1,13 +1,10 @@
 os.pullEvent = os.pullEventRaw
---Load
-os.loadAPI(".sertexos/apis/sertexosapi")
+os.loadAPI(".sertexos/apis/sertexos")
 
-sertexosapi.load()
-sertexosapi.start()
+sertexos.load()
+sertexos.start()
+sertexos.header()
 
---Header and Menu
-
-sertexosapi.header()
 print(" [1] Applications")
 print(" [2] Options")
 print(" [3] Shell")
@@ -48,7 +45,7 @@ while true do
   if key == 7 then
     term.clear()
     term.setCursorPos(1,1)
-    sertexapi.centerDisplay("Rebooting...")
+    sertextext.centerDisplay("Rebooting...")
     sleep(2)
     os.reboot()
   end
@@ -56,7 +53,7 @@ while true do
   if key == 8 then
     term.clear()
     term.setCursorPos(1,1)
-    sertexapi.centerDisplay("Shut Down...")
+    sertextext.centerDisplay("Shut Down...")
     sleep(2)
     os.shutdown()
   end

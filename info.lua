@@ -1,8 +1,8 @@
 os.pullEvent = os.pullEventRaw
 
-os.loadAPI(".setexos/apis/sertexosapi")
-sertexosapi.load()
-sertexosapi.start()
+os.loadAPI(".sertexos/apis/sertexos")
+sertexos.load()
+sertexos.start()
 
 local ver = fs.open(".sertexos/ver", "r")
 

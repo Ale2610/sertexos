@@ -1,14 +1,14 @@
 os.pullEvent = os.pullEventRaw
 
-os.loadAPI(".sertexos/apis/sertexosapi")
-sertexosapi.loadWSHA()
-sertexosapi.start()
+os.loadAPI(".sertexos/apis/sertexos")
+sertexos.loadWithSHA()
+sertexos.start()
 
 function header()
 term.clear()
 term.setTextColor(colors.red)
-sertexapi.center(2, "SertexOS")
-sertexapi.right(2, "[ SETUP ]")
+sertextext.center(2, "SertexOS")
+sertextext.right(2, "[ SETUP ]")
 term.setCursorPos(2,2)
 print("ID: " .. os.getComputerID())
 end

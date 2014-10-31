@@ -1,8 +1,8 @@
 os.pullEvent = os.pullEventRaw
-os.loadAPI(".sertexos/apis/sertexosapi")
+os.loadAPI(".sertexos/apis/sertexos")
 
-sertexosapi.loadWSHA()
-sertexosapi.start()
+sertexos.loadWithSHA()
+sertexos.start()
 
 function setLabel()
     sleep(0.1)
@@ -40,7 +40,7 @@ end
 print("You need HTTP API enabled!")
 end
 
-sertexosapi.headerSub("Options")
+sertexos.headerSub("Options")
 print(" [1] Set Computer Name\n [2] Clear Computer Name\n [3] Update\n [4] Reset Password\n [5] Back")
 
 while true do

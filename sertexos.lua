@@ -1,12 +1,10 @@
 function load()
 	os.loadAPI("/.sertexos/apis/sertextext")
-       sertexos = true
 end
 
 function loadWithSHA()
 	os.loadAPI("/.sertexos/apis/sertextext")
 	os.loadAPI("/.sertexos/apis/sha256")
-       sertexos = true
 end
 
 function start()
@@ -62,11 +60,9 @@ end
 
 functon unload()
   os.unloadAPI("/.sertexos/apis/sertextext")
-  sertexos = false
 end
 
 function unloadWithSHA()
   os.unloadAPI("/.sertexos/apis/sertextext")
   os.unloadAPI("/.sertexos/apis/sha256")
-  sertexos = false
 end

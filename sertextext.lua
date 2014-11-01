@@ -1,4 +1,4 @@
---SertexAPI by Ale2610 and MultMine
+--SertexText API by Ale2610 and MultMine
 --1.1
 
 function right(y, text )

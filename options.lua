@@ -29,6 +29,7 @@ function clearLabel()
 end
 
 function update()
+    sertexos.unloadWithSHA()
 	term.clear()
     term.setCursorPos(2,2)
     term.setTextColor(colors.red)

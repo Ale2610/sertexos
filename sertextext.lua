@@ -23,3 +23,26 @@ function centerDisplay( text )
         term.setCursorPos(( x - string.len(text)) / 2, y / 2)
         write( text )
 end
+
+function slowRight(y, text )
+        local w, h = term.getSize()
+        term.setCursorPos(w - #text, y)
+        textutils.slowWrite(text)
+end
+
+function slowLeft(y, text)
+	term.setCursorPos(1, y)
+	textutils.slowWrite( text )
+end
+
+function slowCenter(y, text )
+        local w, h = term.getSize()
+        term.setCursorPos((w - #text) / 2, y)
+        textutils.slowWrite(text)
+end
+
+function slowCenterDisplay( text )
+        local x, y = term.getSize()
+        term.setCursorPos(( x - string.len(text)) / 2, y / 2)
+        textutils.slowWrite( text )
+end

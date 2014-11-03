@@ -58,7 +58,7 @@ term.setTextColor(app)
 term.setCursorPos(1,7)
 end
 
-functon unload()
+function unload()
   os.unloadAPI("/.sertexos/apis/sertextext")
 end
 

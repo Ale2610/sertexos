@@ -1,5 +1,5 @@
 --SertexText API by Ale2610 and MultMine
---1.1
+--1.2
 
 function right(y, text )
         local w, h = term.getSize()

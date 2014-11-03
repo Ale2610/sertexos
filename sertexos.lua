@@ -93,10 +93,12 @@ term.setCursorPos(1,7)
 end
 
 function unload()
+  version.close()
   os.unloadAPI("/.sertexos/apis/sertextext")
 end
 
 function unloadWithSHA()
   os.unloadAPI("/.sertexos/apis/sertextext")
   os.unloadAPI("/.sertexos/apis/sha256")
+  version.close()
 end

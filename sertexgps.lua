@@ -6,9 +6,8 @@ sertexos.start()
 term.clear()
 term.setCursorPos(1,1)
 term.setTextColor( red )
-print""
-print(" SertexOS GPS")
-print""
+sertextext.slowCenter(2, "SertexOS GPS")
+sertextext.slowCenter(4,"Looking For GPS Tower...")
 local x, y, z = gps.locate(5)
 if not x then
 	term.setTextColor( red )

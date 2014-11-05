@@ -34,9 +34,12 @@ if fs.exists(".sertexos/setup") then
 	shell.run(".sertexos/setup")
 end
 
-recentVersion = fs.open(".sertexos/recentVersion", "w")
-recentVersion.write(http.get("https://raw.githubusercontent.com/Sertex-Team/sertexos/master/ver.txt").readLine())
-recentVersion.close()
+currentVersion = fs.open(".sertexos/ver", "r")
 
-
+if not currentVersion.readLine() == http.get("https://raw.githubusercontent.com/Sertex-Team/sertexos/master/ver.txt").readLine() then
+  term.clear()
+  sertextext.center(2, "New version found! If your current version is recent please ignore")
+  sertextext.center(4, "Press Any Key")
+  os.pullEvent("key")
+  
 load()

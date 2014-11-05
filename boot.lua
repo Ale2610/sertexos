@@ -41,5 +41,6 @@ if not currentVersion.readLine() == http.get("https://raw.githubusercontent.com/
   sertextext.center(2, "New version found! If your current version is recent please ignore")
   sertextext.center(4, "Press Any Key")
   os.pullEvent("key")
-  
+end
+
 load()

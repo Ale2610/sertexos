@@ -29,14 +29,14 @@ term.setTextColor( title )
 sertextext.center(2, "SertexOS")
 term.setTextColor( text )
 sertextext.slowCenterDisplay("Loading...")
-sleep(1.8)
-
-recentVersion = fs.open(".sertexos/recentVersion", "w")
-recentVersion.write(http.get("").readLine())
-recentVersion.close()
 
 if fs.exists(".sertexos/setup") then
 	shell.run(".sertexos/setup")
 end
+
+recentVersion = fs.open(".sertexos/recentVersion", "w")
+recentVersion.write(http.get("https://raw.githubusercontent.com/Sertex-Team/sertexos/master/ver.txt").readLine())
+recentVersion.close()
+
 
 load()

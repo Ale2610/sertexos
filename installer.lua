@@ -87,8 +87,8 @@ if fs.exists("startup") then
 end
 
 gt("https://raw.githubusercontent.com/Sertex-Team/sertexos/master/src/setup/startup.lua", "startup")
-gt("https://raw.githubusercontent.com/Sertex-Team/sertexos/master/src/pass.lua", ".sertexos/pass")
-gt("https://raw.githubusercontent.com/Sertex-Team/sertexos/master/src/setup.lua", ".sertexos/setup")
+gt("https://raw.githubusercontent.com/Sertex-Team/sertexos/master/src/setup/pass.lua", ".sertexos/pass")
+gt("https://raw.githubusercontent.com/Sertex-Team/sertexos/master/src/setup/setup.lua", ".sertexos/setup")
 
 gt("https://raw.githubusercontent.com/Sertex-Team/sertexos/master/LICENSE", ".sertexos/LICENSE")
 gt("https://raw.githubusercontent.com/Sertex-Team/sertexos/master/src/ver.txt", ".sertexos/ver")

@@ -10,8 +10,9 @@ sertextext.slowCenterDisplay("Loading...")
 
 sleep(0.5)
 
-if fs.exists(".sertexos/setup") then	shell.run(".sertexos/setup")	end
-
+if fs.exists(".sertexos/setup") then
+	shell.run(".sertexos/setup")
+end
 
 currentVersion = fs.open(".sertexos/ver", "r")
 

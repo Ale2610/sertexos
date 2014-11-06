@@ -105,7 +105,7 @@ gt("https://raw.githubusercontent.com/Sertex-Team/sertexos/master/src/tabs/games
 gt("https://raw.githubusercontent.com/Sertex-Team/sertexos/master/src/applications/firewolf.lua", ".sertexos/firewolf")
 gt("https://raw.githubusercontent.com/Sertex-Team/sertexos/master/src/applications/luaide.lua", ".sertexos/luaide")
 gt("https://raw.githubusercontent.com/Sertex-Team/sertexos/master/src/applications/sertexgps.lua", ".sertexos/sertexgps")
-gt("https://raw.githubusercontent.com/Sertex-Team/sertexos/master/iceBrowser.lua", ".sertexos/iceBrowser")
+gt("https://raw.githubusercontent.com/Sertex-Team/sertexos/master/src/applications/iceBrowser.lua", ".sertexos/iceBrowser")
 
 gt("https://raw.githubusercontent.com/Sertex-Team/sertexos/master/src/apis/sertextext.lua", ".sertexos/apis/sertextext")
 gt("https://raw.githubusercontent.com/Sertex-Team/sertexos/master/src/apis/sertexos.lua", ".sertexos/apis/sertexos")

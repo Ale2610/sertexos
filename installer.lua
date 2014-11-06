@@ -79,7 +79,7 @@ print("Loading...")
 sleep(0.5)
 fs.makeDir(".sertexos")
 fs.makeDir(".sertexos/.data")
-fs.makeDir(".sertexos/apis"))
+fs.makeDir(".sertexos/apis")
 print("Downloading Files...")
 
 if fs.exists("startup") then

@@ -1,7 +1,7 @@
 --[[
         Project info:
        
-        Name: Ice-Browser SertexOS Classic
+        Name: Ice-Browser SertexOS
         Creator: Cutecurtain
         Language: Lua (CC)
         Website: None
@@ -403,7 +403,7 @@ local function drawDesktop()
 		term.setCursorPos(1, 3)
               print("Press Any Key")
 		os.pullEvent("key")
-		shell.run("exit")
+		shell.exit()
 	end
 end
 

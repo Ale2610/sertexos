@@ -12,9 +12,9 @@ if not http then
 end
  
 sertexos.headerSub("Applications")
-term.setTextColor(colors.green)
+term.setTextColor(dir)
 print(" [1] Games")
-term.setTextColor(colors.blue)
+term.setTextColor(blue)
 print(" [2] Ice-Browser\n [3] SertexGPS\n [4] LuaIDE\n [5] Firewolf\n [6] Back")
 
 while true do

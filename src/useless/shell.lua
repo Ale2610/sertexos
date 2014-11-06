@@ -22,9 +22,9 @@ local tEnv = {
 -- Colours
 local promptColour, textColour, bgColour
 if term.isColour() then
-	promptColour = colours.orange
-	textColour = colours.yellow
-	bgColour = colours.black
+	promptColour = colours.red
+	textColour = colours.blue
+	bgColour = colours.white
 else
 	promptColour = colours.white
 	textColour = colours.white
@@ -221,7 +221,7 @@ else
     term.setBackgroundColor( bgColour )
     term.setTextColour( promptColour )
     print("SertexOS Shell")
-	print("Call exit to exit")
+	print("Write exit() to exit")
     term.setTextColour( textColour )
 
     -- Run the startup program
@@ -240,6 +240,10 @@ else
 
         local sLine = read( nil, tCommandHistory )
         table.insert( tCommandHistory, sLine )
-        shell.run( sLine )
+		if sLine == "exit()" then
+			shell.exit()
+		else
+			shell.run( sLine )
+		end
     end
 end

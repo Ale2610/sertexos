@@ -32,5 +32,5 @@ else
 	print(" Press Any Key!")
         os.pullEvent("key")
         term.clear()
-	shell.run("exit")
+	shell.exit()
 end

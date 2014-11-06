@@ -38,14 +38,15 @@ while true do
     if fs.exists(".sertexos/.data/pass") then
       shell.run(".sertexos/boot")
     else
-      printError(" Set A Password")
+		term.setTextColor( red )
+      print(" Set A Password")
     end
   end
 
   if key == 7 then
     term.clear()
     term.setCursorPos(1,1)
-    sertextext.centerDisplay("Rebooting...")
+    sertextext.slowCenterDisplay("Rebooting...")
     sleep(2)
     os.reboot()
   end
@@ -53,7 +54,7 @@ while true do
   if key == 8 then
     term.clear()
     term.setCursorPos(1,1)
-    sertextext.centerDisplay("Shut Down...")
+    sertextext.slowCenterDisplay("Shutting Down...")
     sleep(2)
     os.shutdown()
   end

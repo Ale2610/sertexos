@@ -13,7 +13,7 @@ function setLabel()
 	local label = read()
 	os.setComputerLabel(label)
 	sleep(1)
-	term.setTextColor(colors.lime)
+	term.setTextColor(green)
 	print""
 	print(" Computer Name: " .. os.getComputerLabel())
 	sleep(1)
@@ -32,7 +32,7 @@ function update()
     sertexos.unloadWithSHA()
 	term.clear()
     term.setCursorPos(2,2)
-    term.setTextColor(colors.red)
+    term.setTextColor(red)
     shell.run("pastebin", "run", "31AUQX7g")
 end
 

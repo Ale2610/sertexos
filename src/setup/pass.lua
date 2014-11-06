@@ -6,7 +6,7 @@ sertexos.start()
 
 term.clear()
 term.setCursorPos(2,2)
-term.setTextColor(colors.red)
+term.setTextColor(red)
 print(" SertexOS Password Setup")
 print""
 print(" Do you want use password?")
@@ -19,10 +19,10 @@ if key == 21 then
   sleep(0.1)
   term.clear()
   term.setCursorPos(2,2)
-  term.setTextColor(colors.red)
+  term.setTextColor(red)
   print(" SertexOS Password Setup")
   print""
-  term.setTextColor(colors.orange)
+  term.setTextColor(blue)
   write(" Password: ")
   local pass = read("*")
   write(" Confirm Password: ")
@@ -35,13 +35,14 @@ if key == 21 then
     f.close()
     term.clear()
     term.setCursorPos(2,2)
-    term.setTextColor(colors.lime)
+    term.setTextColor(green)
     print(" Done!")
     sleep(2)
     fs.delete(".sertexos/pass")
     shell.run(".sertexos/boot")
   else
     print""
+	term.setTextColor( red )
     print(" Wrong Password!")
     sleep(2)
     shell.run(".sertexos/pass")

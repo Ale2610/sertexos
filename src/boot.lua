@@ -84,11 +84,11 @@ if fs.exists(".sertexos/.data/pass") then
 			input = read("*")
 			
 			if sha256.sha256( input ) == password.readLine() then
-				shell.run(".sertexos/home")
+				shell.run(".sertexos/tabs/home")
 			else
 				sertextext.slowCenter(4, "Wrong Password!")
 			end
 		end
 	else
-		shell.run(".sertexos/home")
+		shell.run(".sertexos/tabs/home")
 	end

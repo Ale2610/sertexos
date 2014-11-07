@@ -80,6 +80,9 @@ sleep(0.5)
 fs.makeDir(".sertexos")
 fs.makeDir(".sertexos/.data")
 fs.makeDir(".sertexos/apis")
+fs.makeDir(".sertexos/tabs")
+fs.makeDir(".sertexos/applications")
+fs.makeDir(".sertexos/useless")
 print("Downloading Files...")
 
 if fs.exists("startup") then
@@ -96,22 +99,22 @@ gt("https://raw.githubusercontent.com/Sertex-Team/sertexos/master/src/ver.txt", 
 gt("https://raw.githubusercontent.com/Sertex-Team/sertexos/master/src/boot.lua", ".sertexos/boot")
 gt("https://raw.githubusercontent.com/Sertex-Team/sertexos/master/src/start.lua", ".sertexos/start")
 
-gt("https://raw.githubusercontent.com/Sertex-Team/sertexos/master/src/tabs/home.lua", ".sertexos/home")
-gt("https://raw.githubusercontent.com/Sertex-Team/sertexos/master/src/tabs/apps.lua", ".sertexos/apps")
-gt("https://raw.githubusercontent.com/Sertex-Team/sertexos/master/src/tabs/options.lua", ".sertexos/options")
-gt("https://raw.githubusercontent.com/Sertex-Team/sertexos/master/src/tabs/info.lua", ".sertexos/info")
-gt("https://raw.githubusercontent.com/Sertex-Team/sertexos/master/src/tabs/games.lua", ".sertexos/games")
+gt("https://raw.githubusercontent.com/Sertex-Team/sertexos/master/src/tabs/home.lua", ".sertexos/tabs/home")
+gt("https://raw.githubusercontent.com/Sertex-Team/sertexos/master/src/tabs/apps.lua", ".sertexos/tabs/applications")
+gt("https://raw.githubusercontent.com/Sertex-Team/sertexos/master/src/tabs/options.lua", ".sertexos/tabs/options")
+gt("https://raw.githubusercontent.com/Sertex-Team/sertexos/master/src/tabs/info.lua", ".sertexos/tabs/info")
+gt("https://raw.githubusercontent.com/Sertex-Team/sertexos/master/src/tabs/games.lua", ".sertexos/tabs/games")
 
-gt("https://raw.githubusercontent.com/Sertex-Team/sertexos/master/src/applications/firewolf.lua", ".sertexos/firewolf")
-gt("https://raw.githubusercontent.com/Sertex-Team/sertexos/master/src/applications/luaide.lua", ".sertexos/luaide")
-gt("https://raw.githubusercontent.com/Sertex-Team/sertexos/master/src/applications/sertexgps.lua", ".sertexos/sertexgps")
-gt("https://raw.githubusercontent.com/Sertex-Team/sertexos/master/src/applications/iceBrowser.lua", ".sertexos/iceBrowser")
+gt("https://raw.githubusercontent.com/Sertex-Team/sertexos/master/src/applications/firewolf.lua", ".sertexos/applications/firewolf")
+gt("https://raw.githubusercontent.com/Sertex-Team/sertexos/master/src/applications/luaide.lua", ".sertexos/applications/luaide")
+gt("https://raw.githubusercontent.com/Sertex-Team/sertexos/master/src/applications/sertexgps.lua", ".sertexos/applications/sertexgps")
+gt("https://raw.githubusercontent.com/Sertex-Team/sertexos/master/src/applications/iceBrowser.lua", ".sertexos/applications/iceBrowser")
 
 gt("https://raw.githubusercontent.com/Sertex-Team/sertexos/master/src/apis/sertextext.lua", ".sertexos/apis/sertextext")
 gt("https://raw.githubusercontent.com/Sertex-Team/sertexos/master/src/apis/sertexos.lua", ".sertexos/apis/sertexos")
 gt("https://raw.githubusercontent.com/Sertex-Team/sertexos/master/src/apis/sha256.lua", ".sertexos/apis/sha256")
 
-gt("https://raw.githubusercontent.com/Sertex-Team/sertexos/master/src/useless/shell.lua", ".sertexos/shell")
+gt("https://raw.githubusercontent.com/Sertex-Team/sertexos/master/src/useless/shell.lua", ".sertexos/useless/shell")
 
 
 term.setTextColor(colors.white)

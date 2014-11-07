@@ -23,4 +23,4 @@ print""
 term.setTextColor(green)
 print(" Press Any Key")
 os.pullEvent("key")
-shell.run(".sertexos/home")
+shell.run(".sertexos/tabs/home")

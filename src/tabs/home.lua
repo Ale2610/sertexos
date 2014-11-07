@@ -18,7 +18,7 @@ while true do
   local id, key = os.pullEvent("key")
 
   if key == 2 then
-    shell.run(".sertexos/tabs/apps")
+    shell.run(".sertexos/tabs/applications")
   end
   
   if key == 3 then

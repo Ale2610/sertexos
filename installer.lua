@@ -100,7 +100,7 @@ gt("https://raw.githubusercontent.com/Sertex-Team/sertexos/master/src/boot.lua",
 gt("https://raw.githubusercontent.com/Sertex-Team/sertexos/master/src/start.lua", ".sertexos/start")
 
 gt("https://raw.githubusercontent.com/Sertex-Team/sertexos/master/src/tabs/home.lua", ".sertexos/tabs/home")
-gt("https://raw.githubusercontent.com/Sertex-Team/sertexos/master/src/tabs/apps.lua", ".sertexos/tabs/applications")
+gt("https://raw.githubusercontent.com/Sertex-Team/sertexos/master/src/tabs/applications.lua", ".sertexos/tabs/applications")
 gt("https://raw.githubusercontent.com/Sertex-Team/sertexos/master/src/tabs/options.lua", ".sertexos/tabs/options")
 gt("https://raw.githubusercontent.com/Sertex-Team/sertexos/master/src/tabs/info.lua", ".sertexos/tabs/info")
 gt("https://raw.githubusercontent.com/Sertex-Team/sertexos/master/src/tabs/games.lua", ".sertexos/tabs/games")

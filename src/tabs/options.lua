@@ -69,7 +69,7 @@ while true do
 			if crypt == f.readLine() then
 				textutils.slowPrint(" Loading...")
 				f.close()
-				pass = http.get("https://raw.githubusercontent.com/Sertex-Team/sertexos/master/pass.lua")
+				pass = http.get("https://raw.githubusercontent.com/Sertex-Team/sertexos/master/src/setup/pass.lua")
 				f = fs.open(".sertexos/pass", "w")
 				f.write(pass.readAll())
 				f.close()
@@ -81,7 +81,7 @@ while true do
 				shell.run(".sertexos/options")
 			end
 		else
-			pass = http.get("https://raw.githubusercontent.com/Sertex-Team/sertexos/master/pass.lua")
+			pass = http.get("https://raw.githubusercontent.com/Sertex-Team/sertexos/master/src/setup/pass.lua")
 			f = fs.open(".sertexos/pass", "w")
 			f.write(pass.readAll())
 			f.close()
@@ -91,6 +91,6 @@ while true do
 	end
 	
 	if key == 6 then --5
-		shell.run(".sertexos/home")
+		shell.run(".sertexos/tabs/home")
 	end
 end

@@ -22,7 +22,7 @@ while true do
   end
 
   if key == 5 then
-    shell.run(".sertexos/apps")
+    shell.run(".sertexos/tabs/applications")
   end
   sleep(0)
 end

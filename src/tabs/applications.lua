@@ -33,15 +33,15 @@ while true do
 	end
 	
 	if key == 5 then
-		shell.run("fg", ".sertexos/luaide")
+		shell.run("fg", ".sertexos/applications/luaide")
 	end
 	
 	if key == 6 then
-		shell.run("fg", ".sertexos/firewolf")
+		shell.run("fg", ".sertexos/applications/firewolf")
 	end
    
     if key == 7 then
-      shell.run(".sertexos/home")
+      shell.run(".sertexos/tabs/home")
     end
 	
 end

@@ -92,6 +92,18 @@ term.setTextColor(app)
 term.setCursorPos(1,7)
 end
 
+function password(program) --don't use (wip)
+  password = read("*")
+  p = fs.open(".sertexos/.data/pass", "r")
+  if sha256.sha256(password) == p.readLine() then
+    shell.run(program)
+  else
+    term.setTextColor(red)
+    print("Wrong Password")
+  end
+end
+  
+
 function unload()
   version.close()
   os.unloadAPI("/.sertexos/apis/sertextext")

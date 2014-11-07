@@ -21,15 +21,15 @@ while true do
        id, key = os.pullEvent("key")
 	
 	if key == 2 then
-	  shell.run(".sertexos/games")
+	  shell.run(".sertexos/tabs/games")
 	end
 	
 	if key == 3 then
-		shell.run("fg", ".sertexos/iceBrowser")
+		shell.run("fg", ".sertexos/applications/iceBrowser")
 	end
 	
 	if key == 4 then
-		shell.run("fg", ".sertexos/sertexgps")
+		shell.run("fg", ".sertexos/applications/sertexgps")
 	end
 	
 	if key == 5 then

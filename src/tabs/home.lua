@@ -18,20 +18,20 @@ while true do
   local id, key = os.pullEvent("key")
 
   if key == 2 then
-    shell.run(".sertexos/apps")
+    shell.run(".sertexos/tabs/apps")
   end
   
   if key == 3 then
-    shell.run(".sertexos/options")
+    shell.run(".sertexos/tabs/options")
   end
 
   if key == 4 then
     sleep(0.1)
-    shell.run("fg shell")
+    shell.run("fg .sertexos/useless/shell")
   end
 
   if key == 5 then
-    shell.run(".sertexos/info")
+    shell.run(".sertexos/tabs/info")
   end
 
   if key == 6 then

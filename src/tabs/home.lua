@@ -27,7 +27,7 @@ while true do
 
   if key == 4 then
     sleep(0.1)
-    shell.run("fg .sertexos/useless/shell")
+    shell.run("fg rom/programs/dhell")
   end
 
   if key == 5 then

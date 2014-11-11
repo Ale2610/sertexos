@@ -116,6 +116,9 @@ gt("https://raw.githubusercontent.com/Sertex-Team/sertexos/master/src/apis/sha25
 
 gt("https://raw.githubusercontent.com/Sertex-Team/sertexos/master/src/useless/shell.lua", ".sertexos/useless/shell")
 
+check = fs.open(".sertexos/check", "w")
+check.write("false")
+check.close
 
 term.setTextColor(colors.white)
 print("\nDone!")

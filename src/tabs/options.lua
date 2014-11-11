@@ -30,10 +30,13 @@ end
 
 function update()
     sertexos.unloadWithSHA()
-	term.clear()
-    term.setCursorPos(2,2)
-    term.setTextColor(red)
-    shell.run("pastebin", "run", "31AUQX7g")
+    check = fs.open(".sertexos/check", "w")
+    check.write("true")
+    check.close()
+    sleep(1)
+    sertextext.slowCenterDisplay("Rebooting...")
+    sleep(1)
+    os.sleep()
 end
 
  --Interface

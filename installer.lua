@@ -1,16 +1,68 @@
+os.pullEvent = os.pullEventRaw
+
+if term.isColor() then
+		title = colors.red
+		text = colors.green
+		dir = colors.green
+		app = colors.blue
+		bg = colors.white
+        logo = colors.red
+		
+		white = colors.white
+		orange = colors.orange
+		magenta = colors.magenta
+		lightBlue = colors.lightBlue
+		yellow = colors.yellow
+		lime = colors.lime
+		pink = colors.pink
+		gray = colors.gray
+		lightGray = colors.lightGray
+		cyan = colors.cyan
+		purple = colors.purple
+		blue = colors.blue
+		brown = colors.brown
+		green = colors.green
+		red = colors.red
+		black = colors.black
+	else
+		title = colors.white
+		text = colors.white
+		dir = colors.white
+		app = colors.white
+		bg = colors.black
+        logo = colors.white
+		
+		white = colors.white
+		orange = colors.white
+		magenta = colors.white
+		lightBlue = colors.white
+		yellow = colors.white
+		lime = colors.white
+		pink = colors.white
+		gray = colors.white
+		lightGray = colors.white
+		cyan = colors.white
+		purple = colors.white
+		blue = colors.white
+		brown = colors.white
+		green = colors.white
+		red = colors.white
+		black = colors.black
+	end
+
 function clear()
-		term.setBackgroundColor(colors.black)
+		term.setBackgroundColor(bg)
         term.clear()
         term.setCursorPos(1,1)
 end
  
 function Reset()
         clear()
- term.setTextColor(colors.white)
+ term.setTextColor(red)
         textutils.slowWrite("SertexOS")
- term.setTextColor(colors.white)
+ term.setTextColor(red)
         printTR("By Sertex-Team")
- term.setTextColor(colors.white)
+ term.setTextColor(green)
         printTM("- Installer -")
         w, h = term.getSize()
         print(string.rep("-", w)) write("\n")
@@ -73,7 +125,7 @@ elseif fs.exists(".sertexos") and fs.exists(".sertexos/.data/pass") then
 end
 
 Reset()
-term.setTextColor(colors.white)
+term.setTextColor(blue)
 print("This operating system is compatible with Classic Computers and optmized for Advanced Computers\n")
 print("Loading...")
 sleep(0.5)
@@ -110,24 +162,24 @@ gt("https://raw.githubusercontent.com/Sertex-Team/sertexos/master/src/applicatio
 gt("https://raw.githubusercontent.com/Sertex-Team/sertexos/master/src/applications/sertexgps.lua", ".sertexos/applications/sertexgps")
 gt("https://raw.githubusercontent.com/Sertex-Team/sertexos/master/src/applications/iceBrowser.lua", ".sertexos/applications/iceBrowser")
 
-gt("https://raw.githubusercontent.com/Sertex-Team/sertexos/master/src/apis/sertextext.lua", ".sertexos/apis/sertextext")
+gt("https://raw.githubusercontent.com/Sertex-Team/SertexText/master/src/lastest/sertextext.lua", ".sertexos/apis/sertextext")
 gt("https://raw.githubusercontent.com/Sertex-Team/sertexos/master/src/apis/sertexos.lua", ".sertexos/apis/sertexos")
 gt("https://raw.githubusercontent.com/Sertex-Team/sertexos/master/src/apis/sha256.lua", ".sertexos/apis/sha256")
 
 gt("https://raw.githubusercontent.com/Sertex-Team/sertexos/master/src/useless/shell.lua", ".sertexos/useless/shell")
 
-check = fs.open(".sertexos/check", "w")
-check.write("false")
-check.close
+--check = fs.open(".sertexos/check", "w")
+--check.write("false")
+--check.close
 
-term.setTextColor(colors.white)
+term.setTextColor(green)
 print("\nDone!")
 sleep(1)
 Reset()
 print("SertexOS Downloaded Successfully!")
-term.setTextColor(colors.white)
+term.setTextColor(red)
 print("\nPress Any Key")
-term.setTextColor(colors.white)
+term.setTextColor(white)
 os.pullEvent("key")
 sleep(0,1)
 term.clear()

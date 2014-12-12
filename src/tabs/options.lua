@@ -34,9 +34,11 @@ function update()
     check.write("true")
     check.close()
     sleep(1)
+		term.clear()
     sertextext.slowCenterDisplay("Rebooting...")
     sleep(1)
-    os.sleep()
+		sertexos.unloadWithSHA()
+    os.reboot()
 end
 
  --Interface

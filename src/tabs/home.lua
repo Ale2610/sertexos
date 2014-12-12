@@ -27,7 +27,7 @@ while true do
 
   if key == 4 then
     sleep(0.1)
-    shell.run("fg rom/programs/dhell")
+    shell.run("fg rom/programs/shell")
   end
 
   if key == 5 then

@@ -16,7 +16,7 @@ function start()
 		dir = colors.green
 		app = colors.blue
 		bg = colors.white
-        logo = colors.red
+    logo = colors.red
 		
 		white = colors.white
 		orange = colors.orange

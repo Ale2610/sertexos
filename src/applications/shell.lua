@@ -4,7 +4,7 @@ local parentShell = shell
 local parentTerm = term.current()
 
 if multishell then
-    multishell.setTitle( multishell.getCurrent(), "shell" )
+    multishell.setTitle( multishell.getCurrent(), "SertexShell" )
 end
 
 local bExit = false
@@ -44,7 +44,7 @@ local function run( _sCommand, ... )
 		    if #tProgramStack > 0 then
     		    multishell.setTitle( multishell.getCurrent(), fs.getName( tProgramStack[#tProgramStack] ) )
     		else
-    		    multishell.setTitle( multishell.getCurrent(), "shell" )
+    		    multishell.setTitle( multishell.getCurrent(), "SertexShell" )
     		end
 		end
 		return result
@@ -221,7 +221,7 @@ else
     term.setBackgroundColor( bgColour )
     term.setTextColour( promptColour )
     print("SertexOS Shell")
-	print("Write exit() to exit")
+		print("Write exit() to exit")
     term.setTextColour( textColour )
 
     -- Run the startup program
@@ -240,10 +240,10 @@ else
 
         local sLine = read( nil, tCommandHistory )
         table.insert( tCommandHistory, sLine )
-		if sLine == "exit()" then
-			shell.exit()
-		else
-			shell.run( sLine )
-		end
+				if sLine == "exit()" then
+					shell.exit()
+				else
+					shell.run( sLine )
+				end
     end
 end

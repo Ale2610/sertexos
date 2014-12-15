@@ -150,27 +150,22 @@ gt("https://raw.githubusercontent.com/Sertex-Team/sertexos/master/src/ver.txt", 
 
 gt("https://raw.githubusercontent.com/Sertex-Team/sertexos/master/src/boot.lua", ".sertexos/boot")
 gt("https://raw.githubusercontent.com/Sertex-Team/sertexos/master/src/start.lua", ".sertexos/start")
-
-gt("https://raw.githubusercontent.com/Sertex-Team/sertexos/master/src/tabs/home.lua", ".sertexos/tabs/home")
-gt("https://raw.githubusercontent.com/Sertex-Team/sertexos/master/src/tabs/applications.lua", ".sertexos/tabs/applications")
-gt("https://raw.githubusercontent.com/Sertex-Team/sertexos/master/src/tabs/options.lua", ".sertexos/tabs/options")
-gt("https://raw.githubusercontent.com/Sertex-Team/sertexos/master/src/tabs/info.lua", ".sertexos/tabs/info")
-gt("https://raw.githubusercontent.com/Sertex-Team/sertexos/master/src/tabs/games.lua", ".sertexos/tabs/games")
+gt("https://raw.githubusercontent.com/Sertex-Team/sertexos/master/src/SertexOS.lua", ".sertexos/SertexOS")
 
 gt("https://raw.githubusercontent.com/Sertex-Team/sertexos/master/src/applications/firewolf.lua", ".sertexos/applications/firewolf")
 gt("https://raw.githubusercontent.com/Sertex-Team/sertexos/master/src/applications/luaide.lua", ".sertexos/applications/luaide")
 gt("https://raw.githubusercontent.com/Sertex-Team/sertexos/master/src/applications/sertexgps.lua", ".sertexos/applications/sertexgps")
 gt("https://raw.githubusercontent.com/Sertex-Team/sertexos/master/src/applications/iceBrowser.lua", ".sertexos/applications/iceBrowser")
+gt("https://raw.githubusercontent.com/Sertex-Team/sertexos/master/src/applications/shell.lua", ".sertexos/applications/shell")
 
 gt("https://raw.githubusercontent.com/Sertex-Team/SertexText/master/src/lastest/sertextext.lua", ".sertexos/apis/sertextext")
 gt("https://raw.githubusercontent.com/Sertex-Team/sertexos/master/src/apis/sertexos.lua", ".sertexos/apis/sertexos")
 gt("https://raw.githubusercontent.com/Sertex-Team/sertexos/master/src/apis/sha256.lua", ".sertexos/apis/sha256")
 
-gt("https://raw.githubusercontent.com/Sertex-Team/sertexos/master/src/useless/shell.lua", ".sertexos/useless/shell")
 
---check = fs.open(".sertexos/check", "w")
---check.write("false")
---check.close
+check = fs.open(".sertexos/check", "w")
+check.write("false")
+check.close
 
 term.setTextColor(green)
 print("\nDone!")

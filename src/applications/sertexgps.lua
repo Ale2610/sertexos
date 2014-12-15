@@ -1,4 +1,9 @@
 os.pullEvent = os.pullEventRaw
+
+printError("An error was found!")
+print("Please press any key")
+os.pullEvent("key")
+shell.exit()
 os.loadAPI(".sertexos/apis/sertexos")
 sertexos.load()
 sertexos.start()

@@ -1,12 +1,18 @@
 os.pullEvent = os.pullEventRaw
 
-check = fs.open(".sertexos/check", "r")
-if check.readLine() == "true" then
-  check.close()
-  sleep(0.5)
-  shell.run("pastebin run 31AUQX7g")
+if fs.exists(".sertexos/check") then
+	check = fs.open(".sertexos/check", "r")
+	if check.readLine() == "true" then
+		check.close()
+		sleep(0.5)
+		shell.run("pastebin run 31AUQX7g")
+	end
+	check.close()
+else
+	check = fs.open(".sertexos/check", "w")
+	check.write("false")
+	check.close()
 end
-check.close()
 
 os.loadAPI(".sertexos/apis/sertexos")
 sertexos.loadWithSHA()
@@ -93,11 +99,11 @@ if fs.exists(".sertexos/.data/pass") then
 			input = read("*")
 			
 			if sha256.sha256( input ) == password.readLine() then
-				shell.run(".sertexos/tabs/home")
+				shell.run(".sertexos/SertexOS")
 			else
 				sertextext.slowCenter(4, "Wrong Password!")
 			end
 		end
 	else
-		shell.run(".sertexos/tabs/home")
+		shell.run(".sertexos/SertexOS")
 	end

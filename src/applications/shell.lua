@@ -24,7 +24,7 @@ local promptColour, textColour, bgColour
 if term.isColour() then
 	promptColour = colours.red
 	textColour = colours.blue
-	bgColour = colours.white
+	bgColour = colours.black
 else
 	promptColour = colours.white
 	textColour = colours.white

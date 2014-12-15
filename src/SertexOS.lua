@@ -79,7 +79,7 @@ while true do
 
   if key == 4 then
     sleep(0.1)
-    shell.run("fg rom/programs/shell")
+    shell.run("fg .sertexos/applications/shell")
   end
 
   if key == 5 then

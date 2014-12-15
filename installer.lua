@@ -1,9 +1,11 @@
 os.pullEvent = os.pullEventRaw
 
-if fs.exists(".sertexos/check") then fs.delete(".seretxos/check") end
-check = fs.open(".sertexos/check", "w")
-check.write("false")
-check.close
+if fs.exists(".sertexos/check") then
+	fs.delete(".seretxos/check")
+end
+	check = fs.open(".sertexos/check", "w")
+	check.write("false")
+	check.close
 
 if term.isColor() then
 		title = colors.red
@@ -11,7 +13,7 @@ if term.isColor() then
 		dir = colors.green
 		app = colors.blue
 		bg = colors.white
-        logo = colors.red
+    logo = colors.red
 		
 		white = colors.white
 		orange = colors.orange
@@ -35,7 +37,7 @@ if term.isColor() then
 		dir = colors.white
 		app = colors.white
 		bg = colors.black
-        logo = colors.white
+    logo = colors.white
 		
 		white = colors.white
 		orange = colors.white

@@ -5,6 +5,9 @@ if fs.exists(".sertexos/check") then
 	if check.readLine() == "true" then
 		check.close()
 		sleep(0.5)
+		term.clear()
+		term.setCursorPos(1,1)
+		print("SertexOS is updating...")
 		shell.run("pastebin run 31AUQX7g")
 	end
 	check.close()

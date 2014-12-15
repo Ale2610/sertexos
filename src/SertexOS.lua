@@ -152,10 +152,11 @@ function update()
     check = fs.open(".sertexos/check", "w")
     check.write("true")
     check.close()
+		term.clear()
     sleep(1)
     sertextext.slowCenterDisplay("Rebooting...")
     sleep(1)
-    os.sleep()
+    os.reboot()
 end
 
  --Interface

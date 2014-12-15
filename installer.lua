@@ -1,5 +1,10 @@
 os.pullEvent = os.pullEventRaw
 
+if fs.exists(".sertexos/check") then fs.delete(".seretxos/check") end
+check = fs.open(".sertexos/check", "w")
+check.write("false")
+check.close
+
 if term.isColor() then
 		title = colors.red
 		text = colors.green
@@ -161,11 +166,6 @@ gt("https://raw.githubusercontent.com/Sertex-Team/sertexos/master/src/applicatio
 gt("https://raw.githubusercontent.com/Sertex-Team/SertexText/master/src/lastest/sertextext.lua", ".sertexos/apis/sertextext")
 gt("https://raw.githubusercontent.com/Sertex-Team/sertexos/master/src/apis/sertexos.lua", ".sertexos/apis/sertexos")
 gt("https://raw.githubusercontent.com/Sertex-Team/sertexos/master/src/apis/sha256.lua", ".sertexos/apis/sha256")
-
-if fs.exists(".sertexos/check") then fs.delete(".seretxos/check") end
-check = fs.open(".sertexos/check", "w")
-check.write("false")
-check.close
 
 term.setTextColor(green)
 print("\nDone!")

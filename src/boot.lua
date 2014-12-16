@@ -7,6 +7,9 @@ if fs.exists(".sertexos/check") then
 		sleep(0.5)
 		term.clear()
 		term.setCursorPos(1,1)
+		check = fs.open(".sertexos/check", "w")
+		check.write("false")
+		check.close()
 		print("SertexOS is updating...")
 		shell.run("pastebin run 31AUQX7g")
 	end

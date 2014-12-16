@@ -94,9 +94,8 @@ end
 if fs.exists(".sertexos/.data/pass") then
 		password = fs.open(".sertexos/.data/pass", "r")
 		
-		term.clear()
-		
 		while true do
+			term.clear()
 			term.setTextColor( red )
 			sertextext.slowCenterDisplay("Password: ")
 			input = read("*")

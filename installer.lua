@@ -1,7 +1,7 @@
 os.pullEvent = os.pullEventRaw
 
 if fs.exists(".sertexos/check") then
-	fs.delete(".seretxos/check")
+	fs.delete(".sertexos/check")
 end
 	check = fs.open(".sertexos/check", "w")
 	check.write("false")

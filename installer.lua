@@ -1,5 +1,7 @@
 os.pullEvent = os.pullEventRaw
 
+print("Installing SertexOS...")
+
 if fs.exists(".sertexos/check") then
 	fs.delete(".sertexos/check")
 end
@@ -7,55 +9,10 @@ end
 	check.write("false")
 	check.close
 	
-local bg, red, green, blue
-if term.isColor() then
-	bg = colors.white
-	red = colors.red
-	green = colors.green
-	blue = colors.blue
-else
-	bg = colors.black
-	red = colors.white
-	green = colors.white
-	blue = colors.white
-end
-
 function clear()
-		term.setBackgroundColor(bg)
-        term.clear()
-        term.setCursorPos(1,1)
+  term.clear()
+  term.setCursorPos(1,1)
 end
- 
-function Reset()
-        clear()
- term.setTextColor(red)
-        textutils.slowWrite("SertexOS")
- term.setTextColor(red)
-        printTR("By Sertex-Team")
- term.setTextColor(green)
-        printTM("- Installer -")
-        w, h = term.getSize()
-        print(string.rep("-", w)) write("\n")
-end
- 
-function printTR( text )
-        w, h = term.getSize()
-        term.setCursorPos(w - #text, 1)
-        write(text)
-end
- 
-function printTM( text )
-        local w, h = term.getSize()
-        term.setCursorPos((w - #text) / 2, 1)
-        write(text)
-end
- 
-function printC( text )
-        local x, y = term.getSize()
-        term.setCursorPos(( x - string.len(text)) / 2, y / 2)
-        write( text )
-end
-
 
 --installer!
 function gt(url, fileName)
@@ -64,18 +21,6 @@ function gt(url, fileName)
 	f.close()
 	print("Installed "..fileName)
 end --end installer
- 
--- Interface --
---if not term.isColor() then
-  --print("ERROR!")
-  --print("Use Advanced Computer!")
-  --shell.run("shell")
---end
-
---if pocket then
-  --print("This OS is for Advanced Computers!")
-  --shell.run("shell")
---end
 
 if not http then
 	print("You need to enable HTTP")
@@ -132,14 +77,11 @@ gt("https://raw.githubusercontent.com/Sertex-Team/SertexText/master/src/lastest/
 gt("https://raw.githubusercontent.com/Sertex-Team/sertexos/master/src/apis/sertexos.lua", ".sertexos/apis/sertexos")
 gt("https://raw.githubusercontent.com/Sertex-Team/sertexos/master/src/apis/sha256.lua", ".sertexos/apis/sha256")
 
-term.setTextColor(green)
 print("\nDone!")
 sleep(1)
 Reset()
 print("SertexOS Downloaded Successfully!")
-term.setTextColor(red)
 print("\nPress Any Key")
-term.setTextColor(colors.white)
 os.pullEvent("key")
 sleep(0,1)
 term.clear()

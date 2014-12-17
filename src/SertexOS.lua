@@ -289,17 +289,41 @@ os.loadAPI(".sertexos/apis/sertexos")
 sertexos.load()
 sertexos.start()
 
+function monitor()
+	while true do
+		term.clear()
+		sertexos.headerSub("Monitor")
+		sertextext.displayCenter("Monitor Name: ")
+		local monitorName = read()
+		if not peripheral.isPresent(monitorName) then
+			print("No monitor found")
+			sleep(2)
+			monitor()
+		end
+		term.clear()
+		sertexos.headerSub("Monitor")
+		sertextext.centerDisplay("Program: ")
+		local monitorProgram = read()
+		term.clear()
+		sertexos.headerSub("Monitor")
+		sertextext.centerDisplay("Argument: ")
+		local monitorArgument = read()
+		if monitorArgument > 0 then
+			shell.run("fg monitor "..monitorName.." "..monitorProgram.." "..monitorArgument)
+			break
+		else
+			shell.run("fg monitor "..monitorName.." "..monitorProgram)
+			break
+	end
+end
+
 --Interface
 
-if not http then
-	error("You need HTTP API enabled!")
-end
- 
 sertexos.headerSub("Applications")
 term.setTextColor(dir)
 print(" [1] Games")
 term.setTextColor(blue)
-print(" [2] Ice-Browser\n [3] SertexGPS\n [4] LuaIDE\n [5] Firewolf\n [6] Back")
+print(" [2] Ice-Browser\n [3] SertexGPS\n [4] LuaIDE\n [5] Firewolf\n [6] Monitor\n [7] Back")
 
 while true do
        id, key = os.pullEvent("key")
@@ -323,8 +347,12 @@ while true do
 	if key == 6 then
 		shell.run("fg", ".sertexos/applications/firewolf")
 	end
-   
-    if key == 7 then
+	
+	if key == 7 then
+		monitor()
+	end
+		
+    if key == 8 then
       home()
     end
 	

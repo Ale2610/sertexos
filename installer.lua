@@ -8,29 +8,22 @@ end
 	check = fs.open(".sertexos/check", "w")
 	check.write("false")
 	check.close
-	
-function clear()
-  term.clear()
-  term.setCursorPos(1,1)
-end
 
---installer!
+	
 function gt(url, fileName)
 	f = fs.open(fileName, "w")
 	f.write(http.get(url).readAll())
 	f.close()
 	print("Installed "..fileName)
-end --end installer
+end
 
 if not http then
 	print("You need to enable HTTP")
-	shell.run("shell")
+	return
 end
 
 if fs.exists(".sertexos") and not fs.exists(".sertexos/.data/pass") then
 	fs.delete(".sertexos")
-	fs.makeDir(".sertexos")
-	fs.makeDir(".sertexos/.data")
 elseif fs.exists(".sertexos") and fs.exists(".sertexos/.data/pass") then
 	fs.move(".sertexos/.data/pass", "cache/pass")
 	fs.delete(".sertexos")
@@ -39,15 +32,9 @@ elseif fs.exists(".sertexos") and fs.exists(".sertexos/.data/pass") then
 	fs.move("cache/pass", ".sertexos/.data/pass")
 end
 
-Reset()
-term.setTextColor(blue)
-print("This operating system is compatible with Classic Computers and optmized for Advanced Computers\n")
-print("Loading...")
-sleep(0.5)
 fs.makeDir(".sertexos")
 fs.makeDir(".sertexos/.data")
 fs.makeDir(".sertexos/apis")
-fs.makeDir(".sertexos/tabs")
 fs.makeDir(".sertexos/applications")
 fs.makeDir(".sertexos/useless")
 print("Downloading Files...")
@@ -77,13 +64,9 @@ gt("https://raw.githubusercontent.com/Sertex-Team/SertexText/master/src/lastest/
 gt("https://raw.githubusercontent.com/Sertex-Team/sertexos/master/src/apis/sertexos.lua", ".sertexos/apis/sertexos")
 gt("https://raw.githubusercontent.com/Sertex-Team/sertexos/master/src/apis/sha256.lua", ".sertexos/apis/sha256")
 
-print("\nDone!")
-sleep(1)
-Reset()
-print("SertexOS Downloaded Successfully!")
-print("\nPress Any Key")
+f = nil
+
+print("SertexOS was installed!")
+print("Press Any Key")
 os.pullEvent("key")
-sleep(0,1)
-term.clear()
-term.setCursorPos(1,1)
 os.reboot()

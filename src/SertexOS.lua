@@ -50,6 +50,80 @@ function start()
 	end
 end
 
+function boot()
+start()
+os.pullEvent = os.pullEventRaw
+
+if fs.exists(".sertexos/check") then
+	check = fs.open(".sertexos/check", "r")
+	if check.readLine() == "true" then
+		check.close()
+		sleep(0.5)
+		term.clear()
+		term.setCursorPos(1,1)
+		check = fs.open(".sertexos/check", "w")
+		check.write("false")
+		check.close()
+		print("SertexOS is updating...")
+		shell.run("pastebin run 31AUQX7g")
+	end
+	check.close()
+else
+	check = fs.open(".sertexos/check", "w")
+	check.write("false")
+	check.close()
+end
+
+sertexos.loadWithSHA()
+sertexos.start()
+
+term.setTextColor( title )
+sertextext.center(2, "SertexOS")
+term.setTextColor( text )
+sertextext.slowCenterDisplay("Loading...")
+
+sleep(0.5)
+
+if fs.exists(".sertexos/setup") then
+	shell.run(".sertexos/setup")
+end
+
+currentVersion = fs.open(".sertexos/ver", "r")
+
+if not currentVersion.readLine() == http.get("https://raw.githubusercontent.com/Sertex-Team/sertexos/master/src/ver.txt").readLine() then
+  term.clear()
+  sertextext.center(2, "New version found! If your current version is recent please ignore")
+  sertextext.center(4, "Press Any Key")
+  os.pullEvent("key")
+end
+while true do
+	term.clear()
+	term.setCursorPos(1,1)
+	term.setTextColor( red )
+	sertextext.center(2, "SertexOS")
+	sertextext.left(4, "Username: ")
+	username = read()
+	if fs.exists(".sertexos/udb/"..username.."/.password") then
+		sertextext.left(5, "Password: ")
+		password = read("*")
+		upw = fs.open(".sertexos/udb/"..username.."/.password", "w")
+		userpw = upw.readLine()
+		upw.close()
+		if userpw == sha256.sha256(userpw) then
+			userLogged = username
+			home()
+		else
+			sertextext.left(6, "Wrong Password!")
+			sleep(2)
+		end
+	else
+		userLogged = username
+		home()
+	end
+end
+
+end
+
 function home()
 os.loadAPI(".sertexos/apis/sertexos")
 
@@ -87,8 +161,8 @@ while true do
   end
 
   if key == 6 then
-    if fs.exists(".sertexos/.data/pass") then
-      shell.run(".sertexos/boot")
+    if fs.exists(".sertexos/udb/"..userLogged.."/.password") then
+      boot()
     else
 		term.setTextColor( red )
       print(" Set A Password")
@@ -183,12 +257,13 @@ while true do
     end
 	
 	if key == 5 then --4
-		if fs.exists(".sertexos/.data/pass") then
+		if fs.exists(".sertexos/udb/"..userLogged.."/.password") then
 			sleep(0.1)
+			print("Change Password For "..userLogged)
 			write(" Insert password: ")
 			local oldPass = read("*")
 			local crypt = sha256.sha256(oldPass)
-			local f = fs.open(".sertexos/.data/pass", "r")
+			local f = fs.open(".sertexos/udb/"..userLogged.."/.password", "r")
 			if crypt == f.readLine() then
 				textutils.slowPrint(" Loading...")
 				f.close()
@@ -234,6 +309,8 @@ term.setTextColor(blue)
 print""
 print(" SertexOS V: "..ver.readLine())
 print(" Created by Ale2610 (_Ale2610_ In-Game)")
+print""
+print(" Logged As "..userLogged)
 print""
 print(" Shell:")
 print(" How to exit from Shell")

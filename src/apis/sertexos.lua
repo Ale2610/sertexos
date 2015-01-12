@@ -40,7 +40,7 @@ function start()
 		dir = colors.white
 		app = colors.white
 		bg = colors.black
-        logo = colors.white
+    logo = colors.white
 		
 		white = colors.white
 		orange = colors.white
@@ -68,6 +68,7 @@ term.clear()
 term.setTextColor( title )
 sertextext.center(2, "SertexOS")
 sertextext.right(2, "[ V: " .. version.readLine() .. " ]")
+sertextext.right(3, "Welcome "..userLogged)
 term.setCursorPos(2,2)
 print("ID: " .. os.getComputerID())
 if os.getComputerLabel() then
@@ -82,6 +83,7 @@ term.clear()
 term.setTextColor(title)
 sertextext.center(2, "SertexOS")
 sertextext.right(2, "[ V: " .. version.readLine() .. " ]")
+sertextext.right(3, "Welcome "..userLogged)
 sertextext.center(5, text )
 term.setCursorPos(2,2)
 print("ID: " .. os.getComputerID())

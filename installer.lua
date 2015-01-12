@@ -22,18 +22,8 @@ if not http then
 	return
 end
 
-if fs.exists(".sertexos") and not fs.exists(".sertexos/.data/pass") then
-	fs.delete(".sertexos")
-elseif fs.exists(".sertexos") and fs.exists(".sertexos/.data/pass") then
-	fs.move(".sertexos/.data/pass", "cache/pass")
-	fs.delete(".sertexos")
-	fs.makeDir(".sertexos")
-	fs.makeDir(".sertexos/.data")
-	fs.move("cache/pass", ".sertexos/.data/pass")
-end
-
 fs.makeDir(".sertexos")
-fs.makeDir(".sertexos/.data")
+fs.makeDir(".sertexos/udb")
 fs.makeDir(".sertexos/apis")
 fs.makeDir(".sertexos/applications")
 fs.makeDir(".sertexos/useless")
@@ -50,7 +40,6 @@ gt("https://raw.githubusercontent.com/Sertex-Team/sertexos/master/src/setup/setu
 gt("https://raw.githubusercontent.com/Sertex-Team/sertexos/master/LICENSE", ".sertexos/LICENSE")
 gt("https://raw.githubusercontent.com/Sertex-Team/sertexos/master/src/ver.txt", ".sertexos/ver")
 
-gt("https://raw.githubusercontent.com/Sertex-Team/sertexos/master/src/boot.lua", ".sertexos/boot")
 gt("https://raw.githubusercontent.com/Sertex-Team/sertexos/master/src/start.lua", ".sertexos/start")
 gt("https://raw.githubusercontent.com/Sertex-Team/sertexos/master/src/SertexOS.lua", ".sertexos/SertexOS")
 

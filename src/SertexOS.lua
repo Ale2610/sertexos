@@ -435,6 +435,7 @@ while true do
 	
 end
 end
+end
 
 start()
 home()

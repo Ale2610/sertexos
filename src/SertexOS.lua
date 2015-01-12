@@ -54,26 +54,6 @@ function boot()
 start()
 os.pullEvent = os.pullEventRaw
 
-if fs.exists(".sertexos/check") then
-	check = fs.open(".sertexos/check", "r")
-	if check.readLine() == "true" then
-		check.close()
-		sleep(0.5)
-		term.clear()
-		term.setCursorPos(1,1)
-		check = fs.open(".sertexos/check", "w")
-		check.write("false")
-		check.close()
-		print("SertexOS is updating...")
-		shell.run("pastebin run 31AUQX7g")
-	end
-	check.close()
-else
-	check = fs.open(".sertexos/check", "w")
-	check.write("false")
-	check.close()
-end
-
 sertexos.loadWithSHA()
 sertexos.start()
 
@@ -223,14 +203,7 @@ end
 
 function update()
     sertexos.unloadWithSHA()
-    check = fs.open(".sertexos/check", "w")
-    check.write("true")
-    check.close()
-		term.clear()
-    sleep(1)
-    sertextext.slowCenterDisplay("Rebooting...")
-    sleep(1)
-    os.reboot()
+		shell.run("pastebin run 31AUQX7g")
 end
 
  --Interface
@@ -362,80 +335,81 @@ function applications()
 
 
  --Data
-os.loadAPI(".sertexos/apis/sertexos")
-sertexos.load()
-sertexos.start()
+	os.loadAPI(".sertexos/apis/sertexos")
+	sertexos.load()
+	sertexos.start()
 
-function monitor()
-	while true do
-		term.clear()
-		sertexos.headerSub("Monitor")
-		sertextext.displayCenter("Monitor Name: ")
-		local monitorName = read()
-		if not peripheral.isPresent(monitorName) then
-			print("No monitor found")
-			sleep(2)
-			monitor()
+	function monitor()
+		while true do
+			term.clear()
+			sertexos.headerSub("Monitor")
+			sertextext.displayCenter("Monitor Name: ")
+			local monitorName = read()
+			if not peripheral.isPresent(monitorName) then
+				print("No monitor found")
+				sleep(2)
+				monitor()
+			end
+			term.clear()
+			sertexos.headerSub("Monitor")
+			sertextext.centerDisplay("Program: ")
+			local monitorProgram = read()
+			term.clear()
+			sertexos.headerSub("Monitor")
+			sertextext.centerDisplay("Argument: ")
+			local monitorArgument = read()
+			if monitorArgument > 0 then
+				shell.run("fg monitor "..monitorName.." "..monitorProgram.." "..monitorArgument)
+				break
+			else
+				shell.run("fg monitor "..monitorName.." "..monitorProgram)
+				break
 		end
-		term.clear()
-		sertexos.headerSub("Monitor")
-		sertextext.centerDisplay("Program: ")
-		local monitorProgram = read()
-		term.clear()
-		sertexos.headerSub("Monitor")
-		sertextext.centerDisplay("Argument: ")
-		local monitorArgument = read()
-		if monitorArgument > 0 then
-			shell.run("fg monitor "..monitorName.." "..monitorProgram.." "..monitorArgument)
-			break
-		else
-			shell.run("fg monitor "..monitorName.." "..monitorProgram)
-			break
 	end
-end
 
 --Interface
 
-sertexos.headerSub("Applications")
-term.setTextColor(dir)
-print(" [1] Games")
-term.setTextColor(blue)
-print(" [2] Ice-Browser\n [3] SertexGPS\n [4] LuaIDE\n [5] Firewolf\n [6] Monitor\n [7] Back")
+	sertexos.headerSub("Applications")
+	term.setTextColor(dir)
+	print(" [1] Games")
+	term.setTextColor(blue)
+	print(" [2] Ice-Browser\n [3] SertexGPS\n [4] LuaIDE\n [5] Firewolf\n [6] Monitor\n [7] Back")
 
-while true do
-       id, key = os.pullEvent("key")
+	while true do
+    id, key = os.pullEvent("key")
 	
-	if key == 2 then
-	  games()
-	end
+		if key == 2 then
+			games()
+		end
 	
-	if key == 3 then
-		shell.run("fg", ".sertexos/applications/iceBrowser")
-	end
+		if key == 3 then
+			shell.run("fg", ".sertexos/applications/iceBrowser")
+		end
 	
-	if key == 4 then
-		shell.run("fg", ".sertexos/applications/sertexgps")
-	end
+		if key == 4 then
+			shell.run("fg", ".sertexos/applications/sertexgps")
+		end
 	
-	if key == 5 then
-		shell.run("fg", ".sertexos/applications/luaide")
-	end
+		if key == 5 then
+			shell.run("fg", ".sertexos/applications/luaide")
+		end
 	
-	if key == 6 then
-		shell.run("fg", ".sertexos/applications/firewolf")
-	end
+		if key == 6 then
+			shell.run("fg", ".sertexos/applications/firewolf")
+		end
 	
-	if key == 7 then
-		monitor()
-	end
+		if key == 7 then
+			monitor()
+		end
 		
-    if key == 8 then
+		if key == 8 then
       home()
     end
 	
 end
 end
 end
+
 
 start()
 home()

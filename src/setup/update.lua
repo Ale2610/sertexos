@@ -1,1 +1,0 @@
-shell.run("pastebin", "run", "31AUQX7g")

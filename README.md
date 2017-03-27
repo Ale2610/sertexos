@@ -1,3 +1,5 @@
+just a totally mess, sorry 
+
 SertexOS
 ========
 WARNING: You need ComputerCraft 1.63^
